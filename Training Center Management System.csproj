@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D440F88-AF90-471F-BCDF-4C503DF05D41}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Training_Center_Management_System</RootNamespace>
+    <AssemblyName>Training Center Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Main\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\frmAddEditCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\frmAddEditCourse.Designer.cs">
+      <DependentUpon>frmAddEditCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Students\frmAddEditStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Students\frmAddEditStudent.Designer.cs">
+      <DependentUpon>frmAddEditStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\frmAppearance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\frmAppearance.Designer.cs">
+      <DependentUpon>frmAppearance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Courses\frmCoursesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Courses\frmCoursesList.Designer.cs">
+      <DependentUpon>frmCoursesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\frmCourseStatics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\frmCourseStatics.Designer.cs">
+      <DependentUpon>frmCourseStatics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Students\frmEditDeleteStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Students\frmEditDeleteStudent.Designer.cs">
+      <DependentUpon>frmEditDeleteStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\frmFilePaths.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\frmFilePaths.Designer.cs">
+      <DependentUpon>frmFilePaths.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\frmInstructorReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\frmInstructorReport.Designer.cs">
+      <DependentUpon>frmInstructorReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\frmLanguages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\frmLanguages.Designer.cs">
+      <DependentUpon>frmLanguages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\frmMonthlyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\frmMonthlyReport.Designer.cs">
+      <DependentUpon>frmMonthlyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Enrollment\frmRegisterStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Enrollment\frmRegisterStudent.Designer.cs">
+      <DependentUpon>frmRegisterStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Students\frmStudentsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Students\frmStudentsList.Designer.cs">
+      <DependentUpon>frmStudentsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Enrollment\frmViewEnrollments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Enrollment\frmViewEnrollments.Designer.cs">
+      <DependentUpon>frmViewEnrollments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructors\frmAddEditInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructors\frmAddEditInstructor.Designer.cs">
+      <DependentUpon>frmAddEditInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructors\frmInstructorsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructors\frmInstructorsList.Designer.cs">
+      <DependentUpon>frmInstructorsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Main\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\frmAddEditCourse.resx">
+      <DependentUpon>frmAddEditCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Students\frmAddEditStudent.resx">
+      <DependentUpon>frmAddEditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\frmAppearance.resx">
+      <DependentUpon>frmAppearance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Courses\frmCoursesList.resx">
+      <DependentUpon>frmCoursesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\frmCourseStatics.resx">
+      <DependentUpon>frmCourseStatics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Students\frmEditDeleteStudent.resx">
+      <DependentUpon>frmEditDeleteStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\frmFilePaths.resx">
+      <DependentUpon>frmFilePaths.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\frmInstructorReport.resx">
+      <DependentUpon>frmInstructorReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\frmLanguages.resx">
+      <DependentUpon>frmLanguages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\frmMonthlyReport.resx">
+      <DependentUpon>frmMonthlyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Enrollment\frmRegisterStudent.resx">
+      <DependentUpon>frmRegisterStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Students\frmStudentsList.resx">
+      <DependentUpon>frmStudentsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Enrollment\frmViewEnrollments.resx">
+      <DependentUpon>frmViewEnrollments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo..png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo...png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo....png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.....png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundTeal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundTeal1.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
