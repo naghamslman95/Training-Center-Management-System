@@ -236,6 +236,11 @@
   <ItemGroup>
     <None Include="Resources\backgroundTeal1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="TrainingCenter_Business\TrainingCenter_Business.csproj">
+      <Project>{0f104f09-4b72-437c-aed1-c620d7af56ff}</Project>
+      <Name>TrainingCenter_Business</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
