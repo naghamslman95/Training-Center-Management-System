@@ -72,27 +72,36 @@ namespace TrainingCenter_Data
             string query = @"Insert into people (FirstName, SecondName, LastName, NationalNo, Gender, DateOfBirth, Phone, Email)
                                 values ( @FirstName, @SecondName, @LastName, @NationalNo, @Gender, @DateOfBirth, @Phone, @Email);
                                    Select Scope_Identity()";
-
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
+            try
             {
-                command.Parameters.Add("@FirstName", SqlDbType.NVarChar, 50).Value = FirstName;
-                command.Parameters.Add("@SecondName", SqlDbType.NVarChar, 50).Value = SecondName;
-                command.Parameters.Add("@LastName", SqlDbType.NVarChar, 50).Value = LastName;
-                command.Parameters.Add("@NationalNo", SqlDbType.NVarChar, 20).Value = NationalNo;
-                command.Parameters.Add("@Gender", SqlDbType.Bit).Value = Gender;
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("@FirstName", SqlDbType.NVarChar, 50).Value = FirstName;
+                    command.Parameters.Add("@SecondName", SqlDbType.NVarChar, 50).Value = SecondName;
+                    command.Parameters.Add("@LastName", SqlDbType.NVarChar, 50).Value = LastName;
+                    command.Parameters.Add("@NationalNo", SqlDbType.NVarChar, 20).Value = NationalNo;
+                    command.Parameters.Add("@Gender", SqlDbType.Bit).Value = Gender;
 
-                SqlParameter emailParam = command.Parameters.Add("@Email", SqlDbType.NVarChar, 100);
-                emailParam.Value = string.IsNullOrEmpty(Email) ? (object)DBNull.Value : Email;
+                    SqlParameter emailParam = command.Parameters.Add("@Email", SqlDbType.NVarChar, 100);
+                    emailParam.Value = string.IsNullOrEmpty(Email) ? (object)DBNull.Value : Email;
 
-                command.Parameters.Add("@Phone", SqlDbType.NVarChar, 50).Value = Phone;
-                command.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = DateOfBirth;
+                    command.Parameters.Add("@Phone", SqlDbType.NVarChar, 50).Value = Phone;
+                    command.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = DateOfBirth;
 
-                connection.Open();
+                    connection.Open();
 
-                object result = command.ExecuteScalar();
+                    object result = command.ExecuteScalar();
 
-                return Convert.ToInt32(result);
+                    return Convert.ToInt32(result);
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                    return -1;
+
+                throw;
             }
         }
 
@@ -110,41 +119,60 @@ namespace TrainingCenter_Data
                             Email = @Email
 
                       WHERE PersonID = @PersonID";
-
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
+            try
             {
-                command.Parameters.Add("@PersonID", SqlDbType.Int).Value = PersonID;
-                command.Parameters.Add("@FirstName", SqlDbType.NVarChar, 50).Value = FirstName;
-                command.Parameters.Add("@SecondName", SqlDbType.NVarChar, 50).Value = SecondName;
-                command.Parameters.Add("@LastName", SqlDbType.NVarChar, 50).Value = LastName;
-                command.Parameters.Add("@NationalNo", SqlDbType.NVarChar, 20).Value = NationalNo;
-                command.Parameters.Add("@Gender", SqlDbType.Bit).Value = Gender;
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("@PersonID", SqlDbType.Int).Value = PersonID;
+                    command.Parameters.Add("@FirstName", SqlDbType.NVarChar, 50).Value = FirstName;
+                    command.Parameters.Add("@SecondName", SqlDbType.NVarChar, 50).Value = SecondName;
+                    command.Parameters.Add("@LastName", SqlDbType.NVarChar, 50).Value = LastName;
+                    command.Parameters.Add("@NationalNo", SqlDbType.NVarChar, 20).Value = NationalNo;
+                    command.Parameters.Add("@Gender", SqlDbType.Bit).Value = Gender;
 
-                SqlParameter emailParam = command.Parameters.Add("@Email", SqlDbType.NVarChar, 100);
-                emailParam.Value = string.IsNullOrEmpty(Email) ? (object)DBNull.Value : Email;
+                    SqlParameter emailParam = command.Parameters.Add("@Email", SqlDbType.NVarChar, 100);
+                    emailParam.Value = string.IsNullOrEmpty(Email) ? (object)DBNull.Value : Email;
 
-                command.Parameters.Add("@Phone", SqlDbType.NVarChar, 50).Value = Phone;
-                command.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = DateOfBirth;
+                    command.Parameters.Add("@Phone", SqlDbType.NVarChar, 50).Value = Phone;
+                    command.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = DateOfBirth;
 
-                connection.Open();
+                    connection.Open();
 
-                return command.ExecuteNonQuery() > 0;
+                    return command.ExecuteNonQuery() > 0;
 
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 2627)
+                    return false;
+
+                throw;
             }
         }
 
         public static bool DeletePerson(int PersonID)
         {
-            string query = @"Delete People
-                                    WHERE PersonID = @PersonID";
-            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
-            using (SqlCommand command = new SqlCommand(query, connection))
+            string query = @"DELETE FROM People
+                     WHERE PersonID = @PersonID";
+            try
             {
-                command.Parameters.Add("@PersonID", SqlDbType.Int).Value = PersonID;
+                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.Add("@PersonID", SqlDbType.Int).Value = PersonID;
 
-                connection.Open();
-                return command.ExecuteNonQuery() > 0;
+                    connection.Open();
+                    return command.ExecuteNonQuery() > 0;
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 547)
+                    return false;
+
+                throw;
             }
         }
 
