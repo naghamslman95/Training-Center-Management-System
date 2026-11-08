@@ -44,7 +44,9 @@
   <ItemGroup>
     <Compile Include="clsCourseData.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
+    <Compile Include="clsEnrollmentData.cs" />
     <Compile Include="clsInstructorData.cs" />
+    <Compile Include="clsPaymentData.cs" />
     <Compile Include="clsPersonData.cs" />
     <Compile Include="clsStudentData.cs" />
     <Compile Include="clsUserData.cs" />

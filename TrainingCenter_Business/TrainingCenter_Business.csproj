@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsCourse.cs" />
+    <Compile Include="clsEnrollment.cs" />
     <Compile Include="clsInstructor.cs" />
+    <Compile Include="clsPayment.cs" />
     <Compile Include="clsPerson.cs" />
     <Compile Include="clsStudent.cs" />
     <Compile Include="clsUser.cs" />
