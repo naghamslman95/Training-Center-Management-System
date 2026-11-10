@@ -131,6 +131,19 @@ namespace TrainingCenter_Data
 
             }
         }
+        public static bool DoesInstructorHaveCourses(int InstructorID)
+        {
+            string query = "Select 1 from Courses where InstructorID = @InstructorID";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.Add("@InstructorID", SqlDbType.Int).Value = InstructorID;
+
+                connection.Open();
+                return (command.ExecuteScalar() != null);
+
+            }
+        }
 
         public static DataTable GetAllCourses()
         {

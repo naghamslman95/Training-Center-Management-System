@@ -123,5 +123,9 @@ namespace TrainingCenter_Business
         {
             return clsCourseData.IsCourseExistByCourseID(ID);
         }
+        public static bool DoesInstructorHaveCourses(int InstructorID)
+        {
+            return clsCourseData.DoesInstructorHaveCourses(InstructorID);
+        }
     }
 }

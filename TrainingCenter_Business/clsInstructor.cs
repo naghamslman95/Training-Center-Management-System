@@ -100,8 +100,13 @@ namespace TrainingCenter_Business
         {
             return clsInstructorData.GetAllInstructors();
         }
+        public static bool HasCourses(int InstructorID)
+        {
+            return clsCourse.DoesInstructorHaveCourses(InstructorID);
+        }
         public static bool DeleteInstructor(int ID)
         {
+            if (HasCourses(ID)) return false;
             return (clsInstructorData.DeleteInstructor(ID));
         }
         public static bool IsInstructorExistByInstructorID(int ID)
