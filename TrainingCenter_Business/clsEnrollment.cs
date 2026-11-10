@@ -25,6 +25,7 @@ namespace TrainingCenter_Business
         private int _originalCourseID;
         private int _originalStudentID;
         private enEnrollmentStatus _originalStatus;
+        private decimal _originalTotalPrice;
 
         private clsEnrollment(int EnrollmentID, int CourseID, int StudentID, decimal TotalPrice,
             DateTime EnrollmentDate, enEnrollmentStatus EnrollmentStatus, int CreatedByUserID)
@@ -44,6 +45,8 @@ namespace TrainingCenter_Business
             _originalCourseID = CourseID;
             _originalStudentID = StudentID;
             _originalStatus = EnrollmentStatus;
+            _originalTotalPrice = TotalPrice;
+
             Mode = enMode.Update;
 
         }
@@ -80,6 +83,7 @@ namespace TrainingCenter_Business
                 _originalStatus = this.EnrollmentStatus;
                 _originalCourseID = this.CourseID;
                 _originalStudentID = this.StudentID;
+                _originalTotalPrice = this.TotalPrice; 
                 return true;
             }
             return false;
@@ -91,6 +95,11 @@ namespace TrainingCenter_Business
             if (this.StudentID <= 0) return false;
             if (this.CourseID <= 0) return false;
             if (this.TotalPrice < 0) return false;
+            if (this.CourseID != _originalCourseID || this.StudentID != _originalStudentID ||  
+                        this.TotalPrice != _originalTotalPrice)
+            {
+                if (clsPayment.GetTotalPaidByEnrollmentID(this.EnrollmentID) > 0) return false;
+            }
             if (this.CourseID != _originalCourseID || this.StudentID != _originalStudentID)
             {
                 if (DoesStudentHaveActiveEnrollment(this.StudentID, this.CourseID)) return false;
@@ -109,6 +118,7 @@ namespace TrainingCenter_Business
                 _originalStatus = this.EnrollmentStatus;
                 _originalCourseID = this.CourseID;
                 _originalStudentID = this.StudentID;
+                _originalTotalPrice = this.TotalPrice;
                 return true;
             }
             return false;
@@ -116,6 +126,7 @@ namespace TrainingCenter_Business
         public bool Cancel()
         {
             if (Mode == enMode.AddNew) return false;
+            if (_originalStatus == enEnrollmentStatus.Cancelled || _originalStatus == enEnrollmentStatus.Completed) return false;
 
             if (clsEnrollmentData.UpdateEnrollmentStatus(this.EnrollmentID, (byte)enEnrollmentStatus.Cancelled))
             {
@@ -128,6 +139,7 @@ namespace TrainingCenter_Business
         public bool SetComplete()
         {
             if (Mode == enMode.AddNew) return false;
+            if (_originalStatus == enEnrollmentStatus.Cancelled || _originalStatus == enEnrollmentStatus.Completed) return false;
 
             if (clsEnrollmentData.UpdateEnrollmentStatus(this.EnrollmentID, (byte)enEnrollmentStatus.Completed))
             {
