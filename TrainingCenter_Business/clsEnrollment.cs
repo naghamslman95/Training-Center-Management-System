@@ -203,6 +203,10 @@ namespace TrainingCenter_Business
         {
             return clsEnrollmentData.DoesStudentHaveActiveEnrollment(StudentID, CourseID);
         }
+        public static bool DoesCourseHaveEnrollments(int CourseID)
+        {
+            return clsEnrollmentData.DoesCourseHaveEnrollments(CourseID);
+        }
         public static int ActiveEnrollmentsPerCourse(int CourseID)
         {
             return clsEnrollmentData.ActiveEnrollmentsPerCourse(CourseID);

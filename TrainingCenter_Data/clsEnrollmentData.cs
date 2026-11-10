@@ -225,6 +225,19 @@ namespace TrainingCenter_Data
             return (GetStudentActiveEnrollmentForCourse(StudentID, CourseID) != -1);
         }
 
+        public static bool DoesCourseHaveEnrollments(int CourseID)
+        {
+            string query = @"Select 1 from Enrollments Where CourseID = @CourseID";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.Add("@CourseID", SqlDbType.Int).Value = CourseID;
+
+                connection.Open();
+                return (command.ExecuteScalar() != null);
+
+            }
+        }
         public static int ActiveEnrollmentsPerCourse(int CourseID)
         {
             string query = @"Select Count (Enrollments.EnrollmentID) from Enrollments 

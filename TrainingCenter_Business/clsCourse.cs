@@ -115,8 +115,13 @@ namespace TrainingCenter_Business
         {
             return clsCourseData.GetAllCourses();
         }
+        public static bool HasEnrollments(int CourseID)
+        {
+            return clsEnrollment.DoesCourseHaveEnrollments(CourseID);
+        }
         public static bool DeleteCourse(int ID)
         {
+            if (HasEnrollments(ID)) return false;
             return (clsCourseData.DeleteCourse(ID));
         }
         public static bool IsCourseExistByCourseID(int ID)
