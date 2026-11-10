@@ -104,8 +104,14 @@ namespace TrainingCenter_Business
         {
             return clsStudentData.GetAllStudents();
         }
+
+        public static bool HasEnrollments(int StudentID)
+        {
+            return clsEnrollment.GetStudentEnrollmentsByStudentID(StudentID).Rows.Count > 0;
+        }
         public static bool DeleteStudent(int ID)
         {
+            if (HasEnrollments(ID)) return false;
             return (clsStudentData.DeleteStudent(ID));
         }
         public static bool IsStudentExistByStudentID(int ID)
