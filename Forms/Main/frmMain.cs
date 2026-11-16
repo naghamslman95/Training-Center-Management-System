@@ -126,5 +126,11 @@ namespace Training_Center_Management_System
         {
             OpenForm(new frmInstructorsList());
         }
+
+        private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPeople frm = new frmPeople();
+            frm.ShowDialog();
+        }
     }
 }

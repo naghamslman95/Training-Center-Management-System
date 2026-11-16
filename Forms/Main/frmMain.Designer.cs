@@ -44,6 +44,7 @@
             this.appearanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filePathsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblDatetime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
@@ -61,6 +62,7 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.peopleToolStripMenuItem,
             this.studentsToolStripMenuItem,
             this.coursesToolStripMenuItem,
             this.instructorsToolStripMenuItem,
@@ -179,7 +181,7 @@
             this.appearanceToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.appearanceToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
-            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.appearanceToolStripMenuItem.Text = "A&ppearance ";
             this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
             // 
@@ -188,7 +190,7 @@
             this.filePathsToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.filePathsToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.filePathsToolStripMenuItem.Name = "filePathsToolStripMenuItem";
-            this.filePathsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.filePathsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.filePathsToolStripMenuItem.Text = "&File Paths";
             this.filePathsToolStripMenuItem.Click += new System.EventHandler(this.filePathsToolStripMenuItem_Click);
             // 
@@ -197,9 +199,17 @@
             this.languageToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.languageToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            this.languageToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.languageToolStripMenuItem.Text = "L&anguage";
             this.languageToolStripMenuItem.Click += new System.EventHandler(this.languageToolStripMenuItem_Click);
+            // 
+            // peopleToolStripMenuItem
+            // 
+            this.peopleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
+            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.peopleToolStripMenuItem.Text = "&People";
+            this.peopleToolStripMenuItem.Click += new System.EventHandler(this.peopleToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -234,7 +244,7 @@
             this.lblUser.BackColor = System.Drawing.Color.DarkCyan;
             this.lblUser.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lblUser.Location = new System.Drawing.Point(579, 14);
+            this.lblUser.Location = new System.Drawing.Point(536, 14);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(83, 17);
             this.lblUser.TabIndex = 8;
@@ -315,6 +325,7 @@
         private System.Windows.Forms.Panel pnlTimeAndUser;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem instructorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem peopleToolStripMenuItem;
     }
 }
 
