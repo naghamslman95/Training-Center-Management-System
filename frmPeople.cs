@@ -14,7 +14,13 @@ namespace Training_Center_Management_System
     public partial class frmPeople : Form
     {
         private DataTable DTPeople;
-
+        private int SelectedPersonID()
+        {
+            if (dgvPeople.CurrentRow == null)
+                return -1;
+            else
+                return (int)dgvPeople.CurrentRow.Cells[0].Value;
+        }
         public frmPeople()
         {
             InitializeComponent();
@@ -31,6 +37,7 @@ namespace Training_Center_Management_System
             dgvPeople.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvPeople.Columns["Email"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             _UpdateRecordCount();
+            cbFilter.Text = "None";
            
         }
         private void _UpdateRecordCount()
@@ -51,7 +58,6 @@ namespace Training_Center_Management_System
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
             }
         }
-
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             DTPeople.DefaultView.RowFilter = "";
@@ -75,7 +81,6 @@ namespace Training_Center_Management_System
                 }
             }
         }
-
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
             if (cbFilter.Text == "None" || txtFilter.Text == "")
@@ -94,7 +99,6 @@ namespace Training_Center_Management_System
             }
             _UpdateRecordCount();
         }
-
         private void cbGenderFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             string FilterColumn = "Gender";
@@ -116,7 +120,6 @@ namespace Training_Center_Management_System
                 DTPeople.DefaultView.RowFilter = $"[{FilterColumn}] = {FilterValue}";
             _UpdateRecordCount();
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddEditPerson frm = new frmAddEditPerson();
@@ -126,21 +129,57 @@ namespace Training_Center_Management_System
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddEditPerson frm = new frmAddEditPerson((int)dgvPeople.CurrentRow.Cells[0].Value);
-            if (frm.ShowDialog() == DialogResult.OK)
-                _RefreshPeopleList();
+            if (SelectedPersonID() != -1)
+            {
+                frmAddEditPerson frm = new frmAddEditPerson(SelectedPersonID());
+                if (frm.ShowDialog() == DialogResult.OK)
+                    _RefreshPeopleList();
+            }
+
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPersonDetails frm = new frmPersonDetails((int)dgvPeople.CurrentRow.Cells[0].Value);
-            frm.ShowDialog();
+            if (SelectedPersonID() != -1)
+            {
+                frmPersonDetails frm = new frmPersonDetails(SelectedPersonID());
+                frm.ShowDialog();
+            }
         }
 
         private void dgvPeople_DoubleClick(object sender, EventArgs e)
         {
-            frmPersonDetails frm = new frmPersonDetails((int)dgvPeople.CurrentRow.Cells[0].Value);
-            frm.ShowDialog();
+            if (SelectedPersonID() != -1)
+            {
+                frmPersonDetails frm = new frmPersonDetails(SelectedPersonID());
+                frm.ShowDialog();
+            }
+        }
+
+        private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditPerson frm = new frmAddEditPerson();
+            if (frm.ShowDialog() == DialogResult.OK)
+                _RefreshPeopleList();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedPersonID() != -1)
+            {
+                if (MessageBox.Show("Are you sure you want to delete person [" + SelectedPersonID() + "]?",
+                "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    if (clsPerson.DeletePerson(SelectedPersonID()))
+                    {
+                        MessageBox.Show("Person is deleted successfully");
+                        _RefreshPeopleList();
+                    }
+                    else
+                        MessageBox.Show("Person is not deleted because there is data linked to it");
+
+                }
+            }
         }
     }
 }
