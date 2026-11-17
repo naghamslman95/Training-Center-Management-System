@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsGlobal.cs" />
+    <Compile Include="clsValidation.cs" />
     <Compile Include="Forms\Main\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +144,12 @@
     <Compile Include="Forms\Instructors\frmInstructorsList.Designer.cs">
       <DependentUpon>frmInstructorsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddEditPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEditPerson.Designer.cs">
+      <DependentUpon>frmAddEditPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +161,12 @@
     </Compile>
     <Compile Include="frmPeople.Designer.cs">
       <DependentUpon>frmPeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersonDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersonDetails.Designer.cs">
+      <DependentUpon>frmPersonDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -198,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Enrollment\frmViewEnrollments.resx">
       <DependentUpon>frmViewEnrollments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEditPerson.resx">
+      <DependentUpon>frmAddEditPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

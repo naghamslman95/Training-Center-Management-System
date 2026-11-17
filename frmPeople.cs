@@ -116,5 +116,19 @@ namespace Training_Center_Management_System
                 DTPeople.DefaultView.RowFilter = $"[{FilterColumn}] = {FilterValue}";
             _UpdateRecordCount();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddEditPerson frm = new frmAddEditPerson();
+            if (frm.ShowDialog() == DialogResult.OK)
+                _RefreshPeopleList();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditPerson frm = new frmAddEditPerson((int)dgvPeople.CurrentRow.Cells[0].Value);
+            if (frm.ShowDialog() == DialogResult.OK)
+                _RefreshPeopleList();
+        }
     }
 }
