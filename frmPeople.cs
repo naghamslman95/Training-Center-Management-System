@@ -130,5 +130,17 @@ namespace Training_Center_Management_System
             if (frm.ShowDialog() == DialogResult.OK)
                 _RefreshPeopleList();
         }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPersonDetails frm = new frmPersonDetails((int)dgvPeople.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+        }
+
+        private void dgvPeople_DoubleClick(object sender, EventArgs e)
+        {
+            frmPersonDetails frm = new frmPersonDetails((int)dgvPeople.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+        }
     }
 }
