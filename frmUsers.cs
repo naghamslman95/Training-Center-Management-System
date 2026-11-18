@@ -14,7 +14,13 @@ namespace Training_Center_Management_System
     public partial class frmUsers : Form
     {
         private DataTable DTUsers;
-
+        private int SelectedUserID()
+        {
+            if (dgvUsers.CurrentRow == null)
+                return -1;
+            else
+                return (int)dgvUsers.CurrentRow.Cells[0].Value;
+        }
         public frmUsers()
         {
             InitializeComponent();
@@ -114,6 +120,30 @@ namespace Training_Center_Management_System
             if (cbFilter.Text == "PersonID" || cbFilter.Text == "UserID")
             {
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddEditUser frm = new frmAddEditUser();
+            if (frm.ShowDialog() == DialogResult.OK)
+                _RefreshUsersList();
+        }
+
+        private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditUser frm = new frmAddEditUser();
+            if (frm.ShowDialog() == DialogResult.OK)
+                _RefreshUsersList();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedUserID() != -1)
+            {
+                frmAddEditUser frm = new frmAddEditUser(SelectedUserID());
+                if (frm.ShowDialog() == DialogResult.OK)
+                    _RefreshUsersList();
             }
         }
     }
