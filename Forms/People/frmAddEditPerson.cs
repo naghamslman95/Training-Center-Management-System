@@ -19,7 +19,7 @@ namespace Training_Center_Management_System
         private enMode _Mode;
         private int _PersonID;
         clsPerson _Person;
-
+        public int PersonID { get { return _Person.PersonID; } }
         public frmAddEditPerson()
         {
             InitializeComponent();

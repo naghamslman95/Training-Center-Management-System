@@ -182,6 +182,12 @@
     <Compile Include="Forms\People\ucPersonInfo.Designer.cs">
       <DependentUpon>ucPersonInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\People\ucPersonInfoWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\People\ucPersonInfoWithFilter.Designer.cs">
+      <DependentUpon>ucPersonInfoWithFilter.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Main\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +257,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\People\ucPersonInfo.resx">
       <DependentUpon>ucPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\People\ucPersonInfoWithFilter.resx">
+      <DependentUpon>ucPersonInfoWithFilter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
