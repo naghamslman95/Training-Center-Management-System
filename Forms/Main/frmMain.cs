@@ -132,5 +132,11 @@ namespace Training_Center_Management_System
             frmPeople frm = new frmPeople();
             frm.ShowDialog();
         }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsers frm = new frmUsers();
+            frm.ShowDialog();
+        }
     }
 }
