@@ -120,11 +120,11 @@
     <Compile Include="Forms\Enrollment\frmRegisterStudent.Designer.cs">
       <DependentUpon>frmRegisterStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Students\frmStudentsList.cs">
+    <Compile Include="Forms\Students\frmStudents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Students\frmStudentsList.Designer.cs">
-      <DependentUpon>frmStudentsList.cs</DependentUpon>
+    <Compile Include="Forms\Students\frmStudents.Designer.cs">
+      <DependentUpon>frmStudents.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Enrollment\frmViewEnrollments.cs">
       <SubType>Form</SubType>
@@ -248,8 +248,8 @@
     <EmbeddedResource Include="Forms\Enrollment\frmRegisterStudent.resx">
       <DependentUpon>frmRegisterStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Students\frmStudentsList.resx">
-      <DependentUpon>frmStudentsList.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Students\frmStudents.resx">
+      <DependentUpon>frmStudents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Enrollment\frmViewEnrollments.resx">
       <DependentUpon>frmViewEnrollments.cs</DependentUpon>
