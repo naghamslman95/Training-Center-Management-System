@@ -150,10 +150,10 @@
     <Compile Include="Forms\People\frmAddEditPerson.Designer.cs">
       <DependentUpon>frmAddEditPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddEditUser.cs">
+    <Compile Include="Forms\Users\frmAddEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddEditUser.Designer.cs">
+    <Compile Include="Forms\Users\frmAddEditUser.Designer.cs">
       <DependentUpon>frmAddEditUser.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -174,22 +174,22 @@
     <Compile Include="Forms\People\frmPersonDetails.Designer.cs">
       <DependentUpon>frmPersonDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmResetPassword.cs">
+    <Compile Include="Forms\Users\frmResetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmResetPassword.Designer.cs">
+    <Compile Include="Forms\Users\frmResetPassword.Designer.cs">
       <DependentUpon>frmResetPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUserDetails.cs">
+    <Compile Include="Forms\Users\frmUserDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUserDetails.Designer.cs">
+    <Compile Include="Forms\Users\frmUserDetails.Designer.cs">
       <DependentUpon>frmUserDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsers.cs">
+    <Compile Include="Forms\Users\frmUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsers.Designer.cs">
+    <Compile Include="Forms\Users\frmUsers.Designer.cs">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -206,10 +206,10 @@
     <Compile Include="Forms\People\ucPersonInfoWithFilter.Designer.cs">
       <DependentUpon>ucPersonInfoWithFilter.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucUserInfo.cs">
+    <Compile Include="Forms\Users\ucUserInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucUserInfo.Designer.cs">
+    <Compile Include="Forms\Users\ucUserInfo.Designer.cs">
       <DependentUpon>ucUserInfo.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\Main\frmMain.resx">
@@ -257,7 +257,7 @@
     <EmbeddedResource Include="Forms\People\frmAddEditPerson.resx">
       <DependentUpon>frmAddEditPerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddEditUser.resx">
+    <EmbeddedResource Include="Forms\Users\frmAddEditUser.resx">
       <DependentUpon>frmAddEditUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
@@ -269,13 +269,13 @@
     <EmbeddedResource Include="Forms\People\frmPersonDetails.resx">
       <DependentUpon>frmPersonDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmResetPassword.resx">
+    <EmbeddedResource Include="Forms\Users\frmResetPassword.resx">
       <DependentUpon>frmResetPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUserDetails.resx">
+    <EmbeddedResource Include="Forms\Users\frmUserDetails.resx">
       <DependentUpon>frmUserDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsers.resx">
+    <EmbeddedResource Include="Forms\Users\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -294,7 +294,7 @@
     <EmbeddedResource Include="Forms\People\ucPersonInfoWithFilter.resx">
       <DependentUpon>ucPersonInfoWithFilter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucUserInfo.resx">
+    <EmbeddedResource Include="Forms\Users\ucUserInfo.resx">
       <DependentUpon>ucUserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
