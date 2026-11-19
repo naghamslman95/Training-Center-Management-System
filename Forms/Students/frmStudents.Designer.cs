@@ -74,6 +74,7 @@
             this.btnAdd.TabIndex = 34;
             this.btnAdd.Text = "Add ";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbFilter
             // 
@@ -140,13 +141,14 @@
             this.toolStripSeparator1,
             this.ShowEnrollmentsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(170, 126);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 148);
             // 
             // addNewStudentToolStripMenuItem
             // 
             this.addNewStudentToolStripMenuItem.Name = "addNewStudentToolStripMenuItem";
-            this.addNewStudentToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.addNewStudentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewStudentToolStripMenuItem.Text = "Add New Student";
+            this.addNewStudentToolStripMenuItem.Click += new System.EventHandler(this.addNewStudentToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -162,8 +164,9 @@
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 

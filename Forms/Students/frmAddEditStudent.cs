@@ -1,72 +1,116 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using TrainingCenter_Business;
 
 namespace Training_Center_Management_System
 {
     public partial class frmAddEditStudent : Form
     {
+        public enum enMode { AddNew = 0, Update = 1 };
+        private enMode _Mode;
+        private int _StudentID = -1;
+        clsStudent _Student;
         public frmAddEditStudent()
         {
             InitializeComponent();
+            _Mode = enMode.AddNew;
+        }
+        public frmAddEditStudent(int StudentID)
+        {
+            InitializeComponent();
+            _StudentID = StudentID;
+            _Mode = enMode.Update;
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void _ResetDefaultValues()
         {
-            txtName.Text = txtID.Text  = txtEmail.Text  = "";
-            dateTimePicker1.Value = DateTime.Now;
-            for (int i = 0; i < chkBoxEnrolledCourses.Items.Count; i++)
+            if (_Mode == enMode.AddNew)
             {
-                chkBoxEnrolledCourses.SetItemChecked(i, false);
+                lblTitle.Text = "Add New Student";
+                _Student = new clsStudent();
+                chbIsActive.Checked = true;
+                ucPersonInfoWithFilter1.ShowAddPerson = true;
+                ucPersonInfoWithFilter1.FilterEnabled = true;
             }
-            cmbStatus.SelectedIndex = -1;
+            if (_Mode == enMode.Update)
+            {
+                lblTitle.Text = "Update Student";
+            }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private bool _LoadData()
         {
-            bool IsValid = true;
-            if (string.IsNullOrWhiteSpace(txtName.Text))
+            _Student = clsStudent.FindByStudentID(_StudentID);
+            ucPersonInfoWithFilter1.FilterEnabled = false;
+            if (_Student == null)
             {
-                errorProvider1.SetError(txtName, "Title can not be empty");
-                IsValid = false;
+                MessageBox.Show("Student Not Found");
+                this.Close();
+                return false;
+            }
+            if (ucPersonInfoWithFilter1.LoadPersonInfo(_Student.PersonID))
+            {
+                lblStudentID.Text = _Student.StudentID.ToString();
+                if (_Student.Status == clsStudent.enStatus.Active) chbIsActive.Checked = true;
+                else chbIsActive.Checked = false;
+                return true;
+            }
+            return false;
+        }
+
+        private void frmAddEditStudent_Load(object sender, EventArgs e)
+        {
+            _ResetDefaultValues();
+            if (_Mode == enMode.Update)
+            {
+                if (!_LoadData())
+                    return;
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            var Result = MessageBox.Show("Are you sure you want to close? any unsaved information will be lost.",
+                          "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (ucPersonInfoWithFilter1.PersonID != -1)
+            {
+                if (_Mode == enMode.AddNew)
+                {
+                    if (clsStudent.IsStudentExistByPersonID(ucPersonInfoWithFilter1.PersonID))
+                    {
+                        MessageBox.Show("Selected Person already is a student, choose another one.", "Select another Person",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                _Student.PersonID = ucPersonInfoWithFilter1.PersonID;
+                if (chbIsActive.Checked == true)  _Student.Status = clsStudent.enStatus.Active;
+                else _Student.Status = clsStudent.enStatus.InActive;
+                if (_Mode == enMode.AddNew)
+                {
+                    _Student.CreatedByUserID = clsGlobal.CurrentUser.UserID;
+                }
+                if (_Student.Save())
+                {
+                    MessageBox.Show("Data Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                    MessageBox.Show("Error:Data  was not Saved Successfully", "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             else
             {
-                errorProvider1.SetError(txtName, "");
+                MessageBox.Show("Please Select a Person", "Select a Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            if (string.IsNullOrWhiteSpace(txtID.Text))
-            {
-                errorProvider1.SetError(txtID, "ID can not be empty");
-                IsValid = false;
-            }
-            else
-            {
-                errorProvider1.SetError(txtID, "");
-            }
-
-            if (string.IsNullOrWhiteSpace(cmbStatus.Text))
-            {
-                errorProvider1.SetError(cmbStatus, "status can not be empty");
-                IsValid = false;
-            }
-            else
-            {
-                errorProvider1.SetError(cmbStatus, "");
-            }
-            if (IsValid)
-            MessageBox.Show("Student Added Successfully!");
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

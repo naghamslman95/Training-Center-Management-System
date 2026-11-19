@@ -122,5 +122,29 @@ namespace Training_Center_Management_System
                 DTStudents.DefaultView.RowFilter = $"[{FilterColumn}] = {FilterValue}";
             _UpdateRecordCount();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddEditStudent frm = new frmAddEditStudent();
+            if (frm.ShowDialog() == DialogResult.OK)
+                _RefreshStudentsList();
+        }
+
+        private void addNewStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditStudent frm = new frmAddEditStudent();
+            if (frm.ShowDialog() == DialogResult.OK)
+                _RefreshStudentsList();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedStudentID() != -1)
+            {
+                frmAddEditStudent frm = new frmAddEditStudent(SelectedStudentID());
+                if (frm.ShowDialog() == DialogResult.OK)
+                    _RefreshStudentsList();
+            }
+        }
     }
 }

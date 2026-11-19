@@ -28,226 +28,134 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.ucPersonInfoWithFilter1 = new Training_Center_Management_System.ucPersonInfoWithFilter();
+            this.chbIsActive = new System.Windows.Forms.CheckBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lblStudentID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.chkBoxEnrolledCourses = new System.Windows.Forms.CheckedListBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(192, 11);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(214, 32);
+            this.lblTitle.TabIndex = 27;
+            this.lblTitle.Text = "Add New Student";
+            // 
+            // ucPersonInfoWithFilter1
+            // 
+            this.ucPersonInfoWithFilter1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ucPersonInfoWithFilter1.FilterEnabled = false;
+            this.ucPersonInfoWithFilter1.Location = new System.Drawing.Point(12, 46);
+            this.ucPersonInfoWithFilter1.Name = "ucPersonInfoWithFilter1";
+            this.ucPersonInfoWithFilter1.ShowAddPerson = false;
+            this.ucPersonInfoWithFilter1.Size = new System.Drawing.Size(625, 331);
+            this.ucPersonInfoWithFilter1.TabIndex = 0;
+            // 
+            // chbIsActive
+            // 
+            this.chbIsActive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chbIsActive.AutoSize = true;
+            this.chbIsActive.Checked = true;
+            this.chbIsActive.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbIsActive.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbIsActive.Location = new System.Drawing.Point(198, 383);
+            this.chbIsActive.Name = "chbIsActive";
+            this.chbIsActive.Size = new System.Drawing.Size(78, 21);
+            this.chbIsActive.TabIndex = 1;
+            this.chbIsActive.Text = "Is Active";
+            this.chbIsActive.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(516, 408);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 30);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(381, 408);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 30);
+            this.btnClose.TabIndex = 3;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // lblStudentID
+            // 
+            this.lblStudentID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblStudentID.AutoSize = true;
+            this.lblStudentID.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentID.Location = new System.Drawing.Point(86, 385);
+            this.lblStudentID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStudentID.Name = "lblStudentID";
+            this.lblStudentID.Size = new System.Drawing.Size(38, 17);
+            this.lblStudentID.TabIndex = 45;
+            this.lblStudentID.Text = "?????";
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(77, 60);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 385);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name: ";
+            this.label1.Size = new System.Drawing.Size(72, 17);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "StudentID:";
             // 
-            // label2
+            // frmAddEditStudent
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(77, 216);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Email:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(77, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 21);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Date of Birth:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(77, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 21);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "ID: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(401, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 21);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Enrolled Courses:";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(212, 62);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 20);
-            this.txtName.TabIndex = 1;
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(212, 114);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 20);
-            this.txtID.TabIndex = 2;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(212, 216);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(169, 20);
-            this.txtEmail.TabIndex = 4;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(272, 346);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(101, 34);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(459, 346);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(101, 34);
-            this.btnReset.TabIndex = 8;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(212, 163);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(99, 20);
-            this.dateTimePicker1.TabIndex = 3;
-            // 
-            // chkBoxEnrolledCourses
-            // 
-            this.chkBoxEnrolledCourses.BackColor = System.Drawing.Color.DarkCyan;
-            this.chkBoxEnrolledCourses.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkBoxEnrolledCourses.FormattingEnabled = true;
-            this.chkBoxEnrolledCourses.Items.AddRange(new object[] {
-            "Computer Skills for Beginners",
-            "Database Management with SQL",
-            "Excel for Business",
-            "Introduction to Programming with C#",
-            "Introduction to Python",
-            "Mobile App Development (Android)",
-            "Web Development Basics (HTML, CSS, JavaScript)"});
-            this.chkBoxEnrolledCourses.Location = new System.Drawing.Point(405, 112);
-            this.chkBoxEnrolledCourses.Name = "chkBoxEnrolledCourses";
-            this.chkBoxEnrolledCourses.Size = new System.Drawing.Size(391, 158);
-            this.chkBoxEnrolledCourses.Sorted = true;
-            this.chkBoxEnrolledCourses.TabIndex = 6;
-            this.chkBoxEnrolledCourses.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(77, 274);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 21);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Status:";
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Active",
-            "Completed",
-            "Inactive",
-            "Withdrawn"});
-            this.cmbStatus.Location = new System.Drawing.Point(212, 274);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(121, 21);
-            this.cmbStatus.Sorted = true;
-            this.cmbStatus.TabIndex = 5;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // frmAddNewStudent
-            // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cmbStatus);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.chkBoxEnrolledCourses);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.CancelButton = this.btnClose;
+            this.ClientSize = new System.Drawing.Size(641, 450);
+            this.Controls.Add(this.lblStudentID);
             this.Controls.Add(this.label1);
-            this.Name = "frmAddNewStudent";
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.chbIsActive);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.ucPersonInfoWithFilter1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MinimizeBox = false;
+            this.Name = "frmAddEditStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add New Student";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.Load += new System.EventHandler(this.frmAddEditStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private ucPersonInfoWithFilter ucPersonInfoWithFilter1;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.CheckBox chbIsActive;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblStudentID;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.CheckedListBox chkBoxEnrolledCourses;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
