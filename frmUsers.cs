@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Training_Center_Management_System.Properties;
 using TrainingCenter_Business;
 
 namespace Training_Center_Management_System
@@ -36,6 +37,7 @@ namespace Training_Center_Management_System
             dgvUsers.Columns["RoleText"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             _UpdateRecordCount();
+            cbFilter.Text = "None";
         }
         private void _UpdateRecordCount()
         {
@@ -144,6 +146,62 @@ namespace Training_Center_Management_System
                 frmAddEditUser frm = new frmAddEditUser(SelectedUserID());
                 if (frm.ShowDialog() == DialogResult.OK)
                     _RefreshUsersList();
+            }
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedUserID() != -1)
+            {
+                frmUserDetails frm = new frmUserDetails(SelectedUserID());
+                frm.ShowDialog();
+            }
+        }
+
+        private void dgvUsers_DoubleClick(object sender, EventArgs e)
+        {
+            if (SelectedUserID() != -1)
+            {
+                frmUserDetails frm = new frmUserDetails(SelectedUserID());
+                frm.ShowDialog();
+            }
+        }
+
+        private void ResetPasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedUserID() != -1)
+            {
+                if (SelectedUserID() == clsGlobal.CurrentUser.UserID)
+                {
+                    MessageBox.Show("use the settings screen to change your own password");
+                    return;
+                }
+                frmResetPassword frm = new frmResetPassword(SelectedUserID());
+                frm.ShowDialog();
+            }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedUserID() != -1)
+            {
+                if (SelectedUserID() == clsGlobal.CurrentUser.UserID)
+                {
+                    MessageBox.Show("you can not delete yourself");
+                    return;
+                }
+                    if (MessageBox.Show("Are you sure you want to delete user [" + dgvUsers.CurrentRow.Cells["UserName"].Value + "]?",
+                "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    if (clsUser.DeleteUser(SelectedUserID()))
+                    {
+                        MessageBox.Show("User is deleted successfully");
+                        _RefreshUsersList();
+                    }
+                    else
+                        MessageBox.Show("User is not deleted because there is data linked to it");
+
+                }
             }
         }
     }
