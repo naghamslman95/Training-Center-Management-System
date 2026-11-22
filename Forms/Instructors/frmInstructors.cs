@@ -123,5 +123,29 @@ namespace Training_Center_Management_System
                 frm.ShowDialog();
             }
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int InstructorID = SelectedInstructorID();
+            if (InstructorID != -1)
+            {
+                if (clsInstructor.HasCourses(InstructorID))
+                {
+                    MessageBox.Show("Can not delete this instructor because there are courses linked to it");
+                    return;
+                }
+                if (MessageBox.Show("Are you sure you want to delete Instructor [" + InstructorID + "]?",
+            "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    if (clsInstructor.DeleteInstructor(InstructorID))
+                    {
+                        MessageBox.Show("Instructor is deleted successfully");
+                        _RefreshInstructorsList();
+                    }
+                    else
+                        MessageBox.Show("Failed to delete instructor");
+                }
+            }
+        }
     }
 }
