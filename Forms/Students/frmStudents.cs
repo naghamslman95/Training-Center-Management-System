@@ -164,5 +164,29 @@ namespace Training_Center_Management_System
                 frm.ShowDialog();
             }
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int StudentID = SelectedStudentID();
+            if (StudentID != -1)
+            {
+                if (clsStudent.HasEnrollments(StudentID))
+                {
+                    MessageBox.Show("Can not delete this student because there are enrollments linked to it");
+                    return;
+                }
+                if (MessageBox.Show("Are you sure you want to delete Student [" + StudentID + "]?",
+            "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    if (clsStudent.DeleteStudent(StudentID))
+                    {
+                        MessageBox.Show("Student is deleted successfully");
+                        _RefreshStudentsList();
+                    }
+                    else
+                        MessageBox.Show("Failed to delete student");
+                }
+            }
+        }
     }
 }
