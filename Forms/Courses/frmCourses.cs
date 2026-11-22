@@ -10,24 +10,16 @@ using System.Windows.Forms;
 
 namespace Training_Center_Management_System
 {
-    public partial class frmCoursesList : Form
+    public partial class frmCourses : Form
     {
-        public frmCoursesList()
+        public frmCourses()
         {
             InitializeComponent();
         }
 
        
 
-        private void frmCoursesList_Load(object sender, EventArgs e)
-        {
-            
-
-
-
-        }
-
-        private void listCoursesList_SelectedIndexChanged(object sender, EventArgs e)
+        private void frmCourses_Load(object sender, EventArgs e)
         {
 
         }
