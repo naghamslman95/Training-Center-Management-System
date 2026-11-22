@@ -125,7 +125,8 @@ namespace Training_Center_Management_System
 
         private void instructorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenForm(new frmInstructorsList());
+            frmInstructors frm = new frmInstructors();
+            frm.ShowDialog();
         }
 
         private void peopleToolStripMenuItem_Click(object sender, EventArgs e)

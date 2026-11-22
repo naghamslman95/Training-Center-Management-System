@@ -132,11 +132,11 @@
     <Compile Include="Forms\Instructors\frmAddEditInstructor.Designer.cs">
       <DependentUpon>frmAddEditInstructor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Instructors\frmInstructorsList.cs">
+    <Compile Include="Forms\Instructors\frmInstructors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Instructors\frmInstructorsList.Designer.cs">
-      <DependentUpon>frmInstructorsList.cs</DependentUpon>
+    <Compile Include="Forms\Instructors\frmInstructors.Designer.cs">
+      <DependentUpon>frmInstructors.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\People\frmAddEditPerson.cs">
       <SubType>Form</SubType>
@@ -218,6 +218,9 @@
     <Compile Include="Forms\Students\ucStudentInfo.Designer.cs">
       <DependentUpon>ucStudentInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Instructors\frmInstructors.resx">
+      <DependentUpon>frmInstructors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
