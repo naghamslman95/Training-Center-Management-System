@@ -91,8 +91,9 @@
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -108,8 +109,9 @@
             // addNewInstructorToolStripMenuItem
             // 
             this.addNewInstructorToolStripMenuItem.Name = "addNewInstructorToolStripMenuItem";
-            this.addNewInstructorToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.addNewInstructorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewInstructorToolStripMenuItem.Text = "Add New Instructor";
+            this.addNewInstructorToolStripMenuItem.Click += new System.EventHandler(this.addNewInstructorToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -122,7 +124,7 @@
             this.toolStripSeparator1,
             this.ShowCoursesToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(178, 126);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 148);
             // 
             // btnAdd
             // 
@@ -133,6 +135,7 @@
             this.btnAdd.TabIndex = 44;
             this.btnAdd.Text = "Add ";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbFilter
             // 
@@ -226,7 +229,10 @@
             this.Controls.Add(this.dgvInstructors);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listInstructorsList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MinimizeBox = false;
             this.Name = "frmInstructors";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Instructors List";
             this.Load += new System.EventHandler(this.frmInstructors_Load);
             this.contextMenuStrip1.ResumeLayout(false);

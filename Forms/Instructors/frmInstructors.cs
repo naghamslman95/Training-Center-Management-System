@@ -82,6 +82,28 @@ namespace Training_Center_Management_System
             }
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddEditInstructor frm = new frmAddEditInstructor();
+            frm.ShowDialog();
+            _RefreshInstructorsList();
+        }
 
+        private void addNewInstructorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditInstructor frm = new frmAddEditInstructor();
+            frm.ShowDialog();
+            _RefreshInstructorsList();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedInstructorID() != -1)
+            {
+                frmAddEditInstructor frm = new frmAddEditInstructor(SelectedInstructorID());
+                if (frm.ShowDialog() == DialogResult.OK)
+                    _RefreshInstructorsList();
+            }
+        }
     }
 }

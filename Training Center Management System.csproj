@@ -218,6 +218,9 @@
     <Compile Include="Forms\Students\ucStudentInfo.Designer.cs">
       <DependentUpon>ucStudentInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Instructors\frmAddEditInstructor.resx">
+      <DependentUpon>frmAddEditInstructor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Instructors\frmInstructors.resx">
       <DependentUpon>frmInstructors.cs</DependentUpon>
     </EmbeddedResource>
