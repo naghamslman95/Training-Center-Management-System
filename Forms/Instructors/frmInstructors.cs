@@ -105,5 +105,23 @@ namespace Training_Center_Management_System
                     _RefreshInstructorsList();
             }
         }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedInstructorID() != -1)
+            {
+                frmInstructorDetails frm = new frmInstructorDetails(SelectedInstructorID());
+                frm.ShowDialog();
+            }
+        }
+
+        private void dgvInstructors_DoubleClick(object sender, EventArgs e)
+        {
+            if (SelectedInstructorID() != -1)
+            {
+                frmInstructorDetails frm = new frmInstructorDetails(SelectedInstructorID());
+                frm.ShowDialog();
+            }
+        }
     }
 }

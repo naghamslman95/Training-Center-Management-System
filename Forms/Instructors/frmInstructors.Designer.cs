@@ -98,8 +98,9 @@
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -124,7 +125,7 @@
             this.toolStripSeparator1,
             this.ShowCoursesToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 148);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(178, 126);
             // 
             // btnAdd
             // 
@@ -189,6 +190,7 @@
             this.dgvInstructors.ReadOnly = true;
             this.dgvInstructors.Size = new System.Drawing.Size(636, 235);
             this.dgvInstructors.TabIndex = 37;
+            this.dgvInstructors.DoubleClick += new System.EventHandler(this.dgvInstructors_DoubleClick);
             // 
             // label1
             // 

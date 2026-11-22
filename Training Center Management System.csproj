@@ -150,6 +150,12 @@
     <Compile Include="Forms\Users\frmAddEditUser.Designer.cs">
       <DependentUpon>frmAddEditUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInstructorDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInstructorDetails.Designer.cs">
+      <DependentUpon>frmInstructorDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,12 @@
     <Compile Include="Forms\Students\ucStudentInfo.Designer.cs">
       <DependentUpon>ucStudentInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucInstructorInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucInstructorInfo.Designer.cs">
+      <DependentUpon>ucInstructorInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Instructors\frmAddEditInstructor.resx">
       <DependentUpon>frmAddEditInstructor.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +281,9 @@
     <EmbeddedResource Include="Forms\Users\frmAddEditUser.resx">
       <DependentUpon>frmAddEditUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInstructorDetails.resx">
+      <DependentUpon>frmInstructorDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\ucStudentInfo.resx">
       <DependentUpon>ucStudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucInstructorInfo.resx">
+      <DependentUpon>ucInstructorInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
