@@ -146,5 +146,23 @@ namespace Training_Center_Management_System
                     _RefreshStudentsList();
             }
         }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedStudentID() != -1)
+            {
+                frmStudentDetails frm = new frmStudentDetails(SelectedStudentID());
+                frm.ShowDialog();
+            }
+        }
+
+        private void dgvStudents_DoubleClick(object sender, EventArgs e)
+        {
+            if (SelectedStudentID() != -1)
+            {
+                frmStudentDetails frm = new frmStudentDetails(SelectedStudentID());
+                frm.ShowDialog();
+            }
+        }
     }
 }

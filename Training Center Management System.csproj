@@ -84,12 +84,6 @@
     <Compile Include="Forms\Reports\frmCourseStatics.Designer.cs">
       <DependentUpon>frmCourseStatics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Students\frmEditDeleteStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Students\frmEditDeleteStudent.Designer.cs">
-      <DependentUpon>frmEditDeleteStudent.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Settings\frmFilePaths.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +186,12 @@
     <Compile Include="Forms\Users\frmUsers.Designer.cs">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStudentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentDetails.Designer.cs">
+      <DependentUpon>frmStudentDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\People\ucPersonInfo.cs">
@@ -212,6 +212,12 @@
     <Compile Include="Forms\Users\ucUserInfo.Designer.cs">
       <DependentUpon>ucUserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucStudentInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucStudentInfo.Designer.cs">
+      <DependentUpon>ucStudentInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Main\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,9 +235,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports\frmCourseStatics.resx">
       <DependentUpon>frmCourseStatics.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Students\frmEditDeleteStudent.resx">
-      <DependentUpon>frmEditDeleteStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\frmFilePaths.resx">
       <DependentUpon>frmFilePaths.cs</DependentUpon>
@@ -278,6 +281,9 @@
     <EmbeddedResource Include="Forms\Users\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentDetails.resx">
+      <DependentUpon>frmStudentDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -296,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\ucUserInfo.resx">
       <DependentUpon>ucUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucStudentInfo.resx">
+      <DependentUpon>ucStudentInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
