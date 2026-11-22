@@ -151,7 +151,7 @@ namespace TrainingCenter_Data
 
             string query = @"SELECT
                             Courses.CourseID, Courses.InstructorID, 
-                            (People.FirstName + ' ' + People.SecondName + ' ' + People.LastName )As FullName,
+                            (People.FirstName + ' ' + People.SecondName + ' ' + People.LastName )As InstructorName,
                             Courses.Title, Courses.Duration, Courses.Price,Courses.TotalSeats,
                             Users.UserName as CreatedBy
                             FROM Courses
