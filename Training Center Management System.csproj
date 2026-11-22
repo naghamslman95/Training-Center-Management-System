@@ -150,10 +150,10 @@
     <Compile Include="Forms\Users\frmAddEditUser.Designer.cs">
       <DependentUpon>frmAddEditUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInstructorDetails.cs">
+    <Compile Include="Forms\Instructors\frmInstructorDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInstructorDetails.Designer.cs">
+    <Compile Include="Forms\Instructors\frmInstructorDetails.Designer.cs">
       <DependentUpon>frmInstructorDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -224,10 +224,10 @@
     <Compile Include="Forms\Students\ucStudentInfo.Designer.cs">
       <DependentUpon>ucStudentInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucInstructorInfo.cs">
+    <Compile Include="Forms\Instructors\ucInstructorInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucInstructorInfo.Designer.cs">
+    <Compile Include="Forms\Instructors\ucInstructorInfo.Designer.cs">
       <DependentUpon>ucInstructorInfo.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\Instructors\frmAddEditInstructor.resx">
@@ -281,7 +281,7 @@
     <EmbeddedResource Include="Forms\Users\frmAddEditUser.resx">
       <DependentUpon>frmAddEditUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInstructorDetails.resx">
+    <EmbeddedResource Include="Forms\Instructors\frmInstructorDetails.resx">
       <DependentUpon>frmInstructorDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
@@ -327,7 +327,7 @@
     <EmbeddedResource Include="Forms\Students\ucStudentInfo.resx">
       <DependentUpon>ucStudentInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucInstructorInfo.resx">
+    <EmbeddedResource Include="Forms\Instructors\ucInstructorInfo.resx">
       <DependentUpon>ucInstructorInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
