@@ -32,8 +32,9 @@ namespace Training_Center_Management_System
             dgvStudents.DataSource = DTStudents;
             dgvStudents.Columns["Status"].Visible = false;
             dgvStudents.Columns["StatusText"].HeaderText = "Status";
+            dgvStudents.Columns["StatusText"].DisplayIndex = dgvStudents.Columns["Status"].DisplayIndex;
             dgvStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dgvStudents.Columns["StatusText"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvStudents.Columns["CreatedBy"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             _UpdateRecordCount();
             cbFilter.Text = "None";
