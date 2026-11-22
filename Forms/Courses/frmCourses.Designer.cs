@@ -53,15 +53,17 @@
             // txtFilter
             // 
             this.txtFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtFilter.Location = new System.Drawing.Point(209, 62);
+            this.txtFilter.Location = new System.Drawing.Point(288, 62);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(180, 20);
             this.txtFilter.TabIndex = 59;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
+            this.txtFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilter_KeyPress);
             // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdd.Location = new System.Drawing.Point(552, 58);
+            this.btnAdd.Location = new System.Drawing.Point(710, 58);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 30);
             this.btnAdd.TabIndex = 60;
@@ -75,13 +77,18 @@
             this.cbFilter.FormattingEnabled = true;
             this.cbFilter.Items.AddRange(new object[] {
             "None",
+            "CourseID",
             "InstructorID",
-            "PersonID",
-            "FullName"});
-            this.cbFilter.Location = new System.Drawing.Point(70, 60);
+            "InstructorName",
+            "Title",
+            "Duration",
+            "Price",
+            "TotalSeats"});
+            this.cbFilter.Location = new System.Drawing.Point(149, 60);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(121, 21);
             this.cbFilter.TabIndex = 56;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -116,7 +123,7 @@
             this.dgvCourses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCourses.Name = "dgvCourses";
             this.dgvCourses.ReadOnly = true;
-            this.dgvCourses.Size = new System.Drawing.Size(636, 260);
+            this.dgvCourses.Size = new System.Drawing.Size(794, 260);
             this.dgvCourses.TabIndex = 54;
             // 
             // label1
@@ -124,7 +131,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(224, 7);
+            this.label1.Location = new System.Drawing.Point(303, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(203, 32);
             this.label1.TabIndex = 53;
@@ -135,7 +142,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(665, 398);
+            this.ClientSize = new System.Drawing.Size(823, 398);
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnAdd);
