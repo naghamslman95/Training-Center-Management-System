@@ -120,11 +120,11 @@
     <Compile Include="Forms\Students\frmStudents.Designer.cs">
       <DependentUpon>frmStudents.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Enrollment\frmViewEnrollments.cs">
+    <Compile Include="Forms\Enrollment\frmEnrollments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Enrollment\frmViewEnrollments.Designer.cs">
-      <DependentUpon>frmViewEnrollments.cs</DependentUpon>
+    <Compile Include="Forms\Enrollment\frmEnrollments.Designer.cs">
+      <DependentUpon>frmEnrollments.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Instructors\frmAddEditInstructor.cs">
       <SubType>Form</SubType>
@@ -242,6 +242,9 @@
     <Compile Include="Forms\Courses\ucCourseInfo.Designer.cs">
       <DependentUpon>ucCourseInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Enrollment\frmEnrollments.resx">
+      <DependentUpon>frmEnrollments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Instructors\frmAddEditInstructor.resx">
       <DependentUpon>frmAddEditInstructor.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,9 +286,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\frmStudents.resx">
       <DependentUpon>frmStudents.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Enrollment\frmViewEnrollments.resx">
-      <DependentUpon>frmViewEnrollments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\People\frmAddEditPerson.resx">
       <DependentUpon>frmAddEditPerson.cs</DependentUpon>

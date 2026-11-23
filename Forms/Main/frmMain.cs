@@ -43,17 +43,7 @@ namespace Training_Center_Management_System
                 formToShow.Show();
             }
         }
- 
-        private void registerStudentInCourseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmRegisterStudent frm = new frmRegisterStudent();
-            frm.ShowDialog();
-        }
 
-        private void viewEnrollmentToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenForm(new frmViewEnrollments());
-        }
 
         private void monthlyReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -139,6 +129,12 @@ namespace Training_Center_Management_System
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmUsers frm = new frmUsers();
+            frm.ShowDialog();
+        }
+
+        private void enrollmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEnrollments frm = new frmEnrollments();
             frm.ShowDialog();
         }
     }

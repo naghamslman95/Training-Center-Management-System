@@ -36,8 +36,6 @@
             this.coursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instructorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enrollmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registerStudentInCourseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewEnrollmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instructorReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,31 +117,11 @@
             // 
             // enrollmentToolStripMenuItem
             // 
-            this.enrollmentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registerStudentInCourseToolStripMenuItem,
-            this.viewEnrollmentToolStripMenuItem});
             this.enrollmentToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.enrollmentToolStripMenuItem.Name = "enrollmentToolStripMenuItem";
             this.enrollmentToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
-            this.enrollmentToolStripMenuItem.Text = "&Enrollment";
-            // 
-            // registerStudentInCourseToolStripMenuItem
-            // 
-            this.registerStudentInCourseToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
-            this.registerStudentInCourseToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.registerStudentInCourseToolStripMenuItem.Name = "registerStudentInCourseToolStripMenuItem";
-            this.registerStudentInCourseToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.registerStudentInCourseToolStripMenuItem.Text = "Re&gister Student";
-            this.registerStudentInCourseToolStripMenuItem.Click += new System.EventHandler(this.registerStudentInCourseToolStripMenuItem_Click);
-            // 
-            // viewEnrollmentToolStripMenuItem
-            // 
-            this.viewEnrollmentToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
-            this.viewEnrollmentToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.viewEnrollmentToolStripMenuItem.Name = "viewEnrollmentToolStripMenuItem";
-            this.viewEnrollmentToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.viewEnrollmentToolStripMenuItem.Text = "&View Enrollment";
-            this.viewEnrollmentToolStripMenuItem.Click += new System.EventHandler(this.viewEnrollmentToolStripMenuItem_Click);
+            this.enrollmentToolStripMenuItem.Text = "&Enrollments";
+            this.enrollmentToolStripMenuItem.Click += new System.EventHandler(this.enrollmentToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
@@ -321,8 +299,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem registerStudentInCourseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewEnrollmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monthlyReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem instructorReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem courseToolStripMenuItem;
