@@ -145,7 +145,7 @@ namespace TrainingCenter_Data
 
             string query = @"SELECT
                             Enrollments.EnrollmentID, Courses.Title, 
-                            (People.FirstName + ' ' + People.SecondName + ' ' + People.LastName )As FullName,
+                            (People.FirstName + ' ' + People.SecondName + ' ' + People.LastName )As StudentName,
                             Enrollments.TotalPrice, Enrollments.EnrollmentDate, Enrollments.EnrollmentStatus,
                             Users.UserName as CreatedBy
                             FROM Enrollments
