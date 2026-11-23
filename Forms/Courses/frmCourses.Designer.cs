@@ -137,6 +137,7 @@
             this.dgvCourses.ReadOnly = true;
             this.dgvCourses.Size = new System.Drawing.Size(794, 260);
             this.dgvCourses.TabIndex = 54;
+            this.dgvCourses.DoubleClick += new System.EventHandler(this.dgvCourses_DoubleClick);
             // 
             // label1
             // 
@@ -179,6 +180,7 @@
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
             this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 

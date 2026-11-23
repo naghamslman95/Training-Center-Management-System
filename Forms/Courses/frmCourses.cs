@@ -132,5 +132,23 @@ namespace Training_Center_Management_System
                     _RefreshCoursesList();
             }
         }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedCourseID() != -1)
+            {
+                frmCourseDetails frm = new frmCourseDetails(SelectedCourseID());
+                frm.ShowDialog();
+            }
+        }
+
+        private void dgvCourses_DoubleClick(object sender, EventArgs e)
+        {
+            if (SelectedCourseID() != -1)
+            {
+                frmCourseDetails frm = new frmCourseDetails(SelectedCourseID());
+                frm.ShowDialog();
+            }
+        }
     }
 }
