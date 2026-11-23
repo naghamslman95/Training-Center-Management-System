@@ -150,5 +150,29 @@ namespace Training_Center_Management_System
                 frm.ShowDialog();
             }
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int CourseID = SelectedCourseID();
+            if (CourseID != -1)
+            {
+                if (clsCourse.HasEnrollments(CourseID))
+                {
+                    MessageBox.Show("Can not delete this course because there are enrollments linked to it");
+                    return;
+                }
+                if (MessageBox.Show("Are you sure you want to delete course [" + CourseID + "]?",
+            "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    if (clsCourse.DeleteCourse(CourseID))
+                    {
+                        MessageBox.Show("Course is deleted successfully");
+                        _RefreshCoursesList();
+                    }
+                    else
+                        MessageBox.Show("Failed to delete course");
+                }
+            }
+        }
     }
 }
