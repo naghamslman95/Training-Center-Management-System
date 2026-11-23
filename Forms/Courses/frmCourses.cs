@@ -20,7 +20,7 @@ namespace Training_Center_Management_System
             if (dgvCourses.CurrentRow == null)
                 return -1;
             else
-                return (int)dgvCourses.CurrentRow.Cells["CoursesID"].Value;
+                return (int)dgvCourses.CurrentRow.Cells["CourseID"].Value;
         }
         public frmCourses()
         {
@@ -106,6 +106,30 @@ namespace Training_Center_Management_System
                     e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
                 else
                     e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.';
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddEditCourse frm = new frmAddEditCourse();
+            frm.ShowDialog();
+            _RefreshCoursesList();
+        }
+
+        private void addNewInstructorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditCourse frm = new frmAddEditCourse();
+            frm.ShowDialog();
+            _RefreshCoursesList();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedCourseID() != -1)
+            {
+                frmAddEditCourse frm = new frmAddEditCourse(SelectedCourseID());
+                if (frm.ShowDialog() == DialogResult.OK)
+                    _RefreshCoursesList();
             }
         }
     }

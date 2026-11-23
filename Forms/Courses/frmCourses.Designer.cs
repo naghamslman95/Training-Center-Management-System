@@ -79,6 +79,7 @@
             this.btnAdd.TabIndex = 60;
             this.btnAdd.Text = "Add ";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbFilter
             // 
@@ -129,6 +130,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCourses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCourses.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvCourses.Location = new System.Drawing.Point(16, 93);
             this.dgvCourses.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCourses.Name = "dgvCourses";
@@ -158,13 +160,14 @@
             this.toolStripSeparator1,
             this.ShowEnrollmentsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 148);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(170, 126);
             // 
             // addNewInstructorToolStripMenuItem
             // 
             this.addNewInstructorToolStripMenuItem.Name = "addNewInstructorToolStripMenuItem";
             this.addNewInstructorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewInstructorToolStripMenuItem.Text = "Add New Course";
+            this.addNewInstructorToolStripMenuItem.Click += new System.EventHandler(this.addNewInstructorToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -182,6 +185,7 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
