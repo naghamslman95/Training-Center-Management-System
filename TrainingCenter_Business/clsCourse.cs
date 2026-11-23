@@ -74,6 +74,8 @@ namespace TrainingCenter_Business
         {
             if (!_IsValid())
                 return false;
+            if (this.TotalSeats < clsEnrollment.ActiveEnrollmentsPerCourse(this.CourseID))
+                return false;
             return clsCourseData.UpdateCourse(this.CourseID, this.InstructorID, this.Title, this.Duration,
                          this.Price, this.TotalSeats);
         }
