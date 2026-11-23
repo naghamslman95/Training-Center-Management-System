@@ -156,10 +156,10 @@
     <Compile Include="Forms\Instructors\frmInstructorDetails.Designer.cs">
       <DependentUpon>frmInstructorDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCourseDetails.cs">
+    <Compile Include="Forms\Courses\frmCourseDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCourseDetails.Designer.cs">
+    <Compile Include="Forms\Courses\frmCourseDetails.Designer.cs">
       <DependentUpon>frmCourseDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -236,10 +236,10 @@
     <Compile Include="Forms\Instructors\ucInstructorInfo.Designer.cs">
       <DependentUpon>ucInstructorInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucCourseInfo.cs">
+    <Compile Include="Forms\Courses\ucCourseInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucCourseInfo.Designer.cs">
+    <Compile Include="Forms\Courses\ucCourseInfo.Designer.cs">
       <DependentUpon>ucCourseInfo.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\Instructors\frmAddEditInstructor.resx">
@@ -296,7 +296,7 @@
     <EmbeddedResource Include="Forms\Instructors\frmInstructorDetails.resx">
       <DependentUpon>frmInstructorDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCourseDetails.resx">
+    <EmbeddedResource Include="Forms\Courses\frmCourseDetails.resx">
       <DependentUpon>frmCourseDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
@@ -345,7 +345,7 @@
     <EmbeddedResource Include="Forms\Instructors\ucInstructorInfo.resx">
       <DependentUpon>ucInstructorInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucCourseInfo.resx">
+    <EmbeddedResource Include="Forms\Courses\ucCourseInfo.resx">
       <DependentUpon>ucCourseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
