@@ -13,6 +13,17 @@ namespace Training_Center_Management_System
 {
     public partial class ucPersonInfoWithFilter : UserControl
     {
+        // Declare a delegate
+        public delegate void DataBackEventHandler(object sender, int PersonID);
+
+        // Declare an event using the delegate
+        public event DataBackEventHandler DataBack;
+
+        private void _RaiseDataBack(int personID)
+        {
+            DataBack?.Invoke(this, personID);
+        }
+
         private bool _ShowAddPerson;
         public bool ShowAddPerson
         {
@@ -74,15 +85,17 @@ namespace Training_Center_Management_System
             }
             if (!_SearchNow())
                 MessageBox.Show("Person is not found");
-
+            else
+                _RaiseDataBack(ucPersonInfo1.PersonID);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddEditPerson frm = new frmAddEditPerson();
             if (frm.ShowDialog() == DialogResult.OK)
-            {
-                LoadPersonInfo(frm.PersonID);
+            {                
+                if (LoadPersonInfo(frm.PersonID))
+                    _RaiseDataBack(ucPersonInfo1.PersonID);
             }
         }
 
