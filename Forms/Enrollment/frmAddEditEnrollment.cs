@@ -239,5 +239,15 @@ namespace Training_Center_Management_System
                     nudTotalPrice.Value = _Course.Price;
             }
         }
+
+        private void lblAddStudent_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAddEditStudent frm = new frmAddEditStudent();
+            frm.PersonID = ucPersonInfoWithFilter1.PersonID;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                PersonSelected(this, ucPersonInfoWithFilter1.PersonID);
+            }
+        }
     }
 }

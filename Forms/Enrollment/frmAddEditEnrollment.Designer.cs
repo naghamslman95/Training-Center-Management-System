@@ -253,6 +253,7 @@
             this.lblAddStudent.TabStop = true;
             this.lblAddStudent.Text = "Add New Student";
             this.lblAddStudent.Visible = false;
+            this.lblAddStudent.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAddStudent_LinkClicked);
             // 
             // lblEnrollmentStatus
             // 
