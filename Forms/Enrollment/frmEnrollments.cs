@@ -178,5 +178,29 @@ namespace Training_Center_Management_System
                 }
             }
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int EnrollmentID = SelectedEnrollmentID();
+            if (EnrollmentID != -1)
+            {
+                if (clsPayment.GetTotalPaidByEnrollmentID(EnrollmentID)>0)
+                {
+                    MessageBox.Show("Can not delete this enrollment because there are payments linked to it");
+                    return;
+                }
+                if (MessageBox.Show("Are you sure you want to delete enrollment [" + EnrollmentID + "]?",
+            "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    if (clsEnrollment.DeleteEnrollment(EnrollmentID))
+                    {
+                        MessageBox.Show("Enrollment is deleted successfully");
+                        _RefreshEnrollmentsList();
+                    }
+                    else
+                        MessageBox.Show("Failed to delete enrollment");
+                }
+            }
+        }
     }
 }
