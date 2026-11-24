@@ -108,11 +108,11 @@
     <Compile Include="Forms\Reports\frmMonthlyReport.Designer.cs">
       <DependentUpon>frmMonthlyReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Enrollment\frmRegisterStudent.cs">
+    <Compile Include="Forms\Enrollment\frmAddEditEnrollment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Enrollment\frmRegisterStudent.Designer.cs">
-      <DependentUpon>frmRegisterStudent.cs</DependentUpon>
+    <Compile Include="Forms\Enrollment\frmAddEditEnrollment.Designer.cs">
+      <DependentUpon>frmAddEditEnrollment.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Students\frmStudents.cs">
       <SubType>Form</SubType>
@@ -281,8 +281,8 @@
     <EmbeddedResource Include="Forms\Reports\frmMonthlyReport.resx">
       <DependentUpon>frmMonthlyReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Enrollment\frmRegisterStudent.resx">
-      <DependentUpon>frmRegisterStudent.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Enrollment\frmAddEditEnrollment.resx">
+      <DependentUpon>frmAddEditEnrollment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Students\frmStudents.resx">
       <DependentUpon>frmStudents.cs</DependentUpon>

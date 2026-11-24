@@ -42,11 +42,11 @@
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbStatusFilter = new System.Windows.Forms.ComboBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.cancelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setCompleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbStatusFilter = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollments)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +81,7 @@
             this.btnAdd.TabIndex = 68;
             this.btnAdd.Text = "Add ";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbFilter
             // 
@@ -156,6 +157,7 @@
             this.addNewInstructorToolStripMenuItem.Name = "addNewInstructorToolStripMenuItem";
             this.addNewInstructorToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.addNewInstructorToolStripMenuItem.Text = "Add New Enrollment";
+            this.addNewInstructorToolStripMenuItem.Click += new System.EventHandler(this.addNewInstructorToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -173,12 +175,30 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
+            // 
+            // cancelToolStripMenuItem
+            // 
+            this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
+            this.cancelToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.cancelToolStripMenuItem.Text = "Cancel";
+            // 
+            // setCompleteToolStripMenuItem
+            // 
+            this.setCompleteToolStripMenuItem.Name = "setCompleteToolStripMenuItem";
+            this.setCompleteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.setCompleteToolStripMenuItem.Text = "Set Complete";
             // 
             // label1
             // 
@@ -206,23 +226,6 @@
             this.cbStatusFilter.Size = new System.Drawing.Size(70, 21);
             this.cbStatusFilter.TabIndex = 69;
             this.cbStatusFilter.SelectedIndexChanged += new System.EventHandler(this.cbStatusFilter_SelectedIndexChanged);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
-            // 
-            // cancelToolStripMenuItem
-            // 
-            this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
-            this.cancelToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.cancelToolStripMenuItem.Text = "Cancel";
-            // 
-            // setCompleteToolStripMenuItem
-            // 
-            this.setCompleteToolStripMenuItem.Name = "setCompleteToolStripMenuItem";
-            this.setCompleteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.setCompleteToolStripMenuItem.Text = "Set Complete";
             // 
             // frmEnrollments
             // 

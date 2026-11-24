@@ -148,5 +148,35 @@ namespace Training_Center_Management_System
                 DTEnrollments.DefaultView.RowFilter = $"[{FilterColumn}] = {FilterValue}";
             _UpdateRecordCount();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddEditEnrollment frm = new frmAddEditEnrollment();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                _RefreshEnrollmentsList();
+            }
+        }
+
+        private void addNewInstructorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditEnrollment frm = new frmAddEditEnrollment();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                _RefreshEnrollmentsList();
+            }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedEnrollmentID()!=-1)
+            {
+                frmAddEditEnrollment frm = new frmAddEditEnrollment(SelectedEnrollmentID());
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    _RefreshEnrollmentsList();
+                }
+            }
+        }
     }
 }
