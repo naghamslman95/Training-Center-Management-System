@@ -85,8 +85,7 @@ namespace Training_Center_Management_System
             }
             if (!_SearchNow())
                 MessageBox.Show("Person is not found");
-            else
-                _RaiseDataBack(ucPersonInfo1.PersonID);
+            _RaiseDataBack(ucPersonInfo1.PersonID);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
