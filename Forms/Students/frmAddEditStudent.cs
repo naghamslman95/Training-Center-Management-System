@@ -6,6 +6,8 @@ namespace Training_Center_Management_System
 {
     public partial class frmAddEditStudent : Form
     {
+        private int _PersonID = -1;
+        public int PersonID { set { _PersonID = value; } }
         public enum enMode { AddNew = 0, Update = 1 };
         private enMode _Mode;
         private int _StudentID = -1;
@@ -29,8 +31,19 @@ namespace Training_Center_Management_System
                 lblTitle.Text = "Add New Student";
                 _Student = new clsStudent();
                 chbIsActive.Checked = true;
-                ucPersonInfoWithFilter1.ShowAddPerson = true;
-                ucPersonInfoWithFilter1.FilterEnabled = true;
+                if (_PersonID != -1)
+                {
+                    if (ucPersonInfoWithFilter1.LoadPersonInfo(_PersonID))
+                    {
+                        ucPersonInfoWithFilter1.FilterEnabled = false;
+                        ucPersonInfoWithFilter1.ShowAddPerson = false;
+                    }
+                    }
+                    else
+                {
+                    ucPersonInfoWithFilter1.ShowAddPerson = true;
+                    ucPersonInfoWithFilter1.FilterEnabled = true;
+                }
             }
             if (_Mode == enMode.Update)
             {
