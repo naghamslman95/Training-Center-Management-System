@@ -137,5 +137,11 @@ namespace Training_Center_Management_System
             frmEnrollments frm = new frmEnrollments();
             frm.ShowDialog();
         }
+
+        private void paymentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPayments frm = new frmPayments();
+            frm.ShowDialog();
+        }
     }
 }

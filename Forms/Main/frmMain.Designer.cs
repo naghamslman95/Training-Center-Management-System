@@ -50,6 +50,7 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.pnlTimeAndUser = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlTimeAndUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,6 +68,7 @@
             this.coursesToolStripMenuItem,
             this.instructorsToolStripMenuItem,
             this.enrollmentToolStripMenuItem,
+            this.paymentsToolStripMenuItem,
             this.reportsToolStripMenuItem,
             this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -177,7 +179,7 @@
             this.appearanceToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.appearanceToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
-            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.appearanceToolStripMenuItem.Text = "A&ppearance ";
             this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
             // 
@@ -186,7 +188,7 @@
             this.filePathsToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.filePathsToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.filePathsToolStripMenuItem.Name = "filePathsToolStripMenuItem";
-            this.filePathsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.filePathsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.filePathsToolStripMenuItem.Text = "&File Paths";
             this.filePathsToolStripMenuItem.Click += new System.EventHandler(this.filePathsToolStripMenuItem_Click);
             // 
@@ -195,7 +197,7 @@
             this.languageToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.languageToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            this.languageToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.languageToolStripMenuItem.Text = "L&anguage";
             this.languageToolStripMenuItem.Click += new System.EventHandler(this.languageToolStripMenuItem_Click);
             // 
@@ -261,6 +263,14 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // paymentsToolStripMenuItem
+            // 
+            this.paymentsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.paymentsToolStripMenuItem.Name = "paymentsToolStripMenuItem";
+            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.paymentsToolStripMenuItem.Text = "Pa&yments";
+            this.paymentsToolStripMenuItem.Click += new System.EventHandler(this.paymentsToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,6 +323,7 @@
         private System.Windows.Forms.ToolStripMenuItem instructorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem peopleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paymentsToolStripMenuItem;
     }
 }
 
