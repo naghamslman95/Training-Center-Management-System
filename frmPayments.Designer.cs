@@ -31,14 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.setCompleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.addNewInstructorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblRecords = new System.Windows.Forms.Label();
             this.txtFilter = new System.Windows.Forms.TextBox();
@@ -52,65 +49,47 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayments)).BeginInit();
             this.SuspendLayout();
             // 
-            // setCompleteToolStripMenuItem
-            // 
-            this.setCompleteToolStripMenuItem.Name = "setCompleteToolStripMenuItem";
-            this.setCompleteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.setCompleteToolStripMenuItem.Text = "Set Complete";
-            // 
-            // cancelToolStripMenuItem
-            // 
-            this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
-            this.cancelToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.cancelToolStripMenuItem.Text = "Cancel";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
-            // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(181, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
-            // addNewInstructorToolStripMenuItem
+            // addNewPaymentToolStripMenuItem
             // 
-            this.addNewInstructorToolStripMenuItem.Name = "addNewInstructorToolStripMenuItem";
-            this.addNewInstructorToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.addNewInstructorToolStripMenuItem.Text = "Add New Enrollment";
+            this.addNewPaymentToolStripMenuItem.Name = "addNewPaymentToolStripMenuItem";
+            this.addNewPaymentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewPaymentToolStripMenuItem.Text = "Add New Payment";
+            this.addNewPaymentToolStripMenuItem.Click += new System.EventHandler(this.addNewPaymentToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewInstructorToolStripMenuItem,
+            this.addNewPaymentToolStripMenuItem,
             this.toolStripSeparator2,
             this.showDetailsToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.cancelToolStripMenuItem,
-            this.setCompleteToolStripMenuItem});
+            this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 148);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 120);
             // 
             // lblRecords
             // 
@@ -126,7 +105,7 @@
             // txtFilter
             // 
             this.txtFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtFilter.Location = new System.Drawing.Point(187, 93);
+            this.txtFilter.Location = new System.Drawing.Point(231, 93);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(180, 20);
             this.txtFilter.TabIndex = 76;
@@ -142,6 +121,7 @@
             this.btnAdd.TabIndex = 77;
             this.btnAdd.Text = "Add ";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbFilter
             // 
@@ -149,12 +129,13 @@
             this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilter.FormattingEnabled = true;
             this.cbFilter.Items.AddRange(new object[] {
+            "None",
             "PaymentID",
             "Course",
             "StudentName",
             "TotalPrice",
             "PaymentAmount"});
-            this.cbFilter.Location = new System.Drawing.Point(33, 91);
+            this.cbFilter.Location = new System.Drawing.Point(77, 91);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(121, 21);
             this.cbFilter.TabIndex = 73;
@@ -248,14 +229,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.ToolStripMenuItem setCompleteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cancelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem addNewInstructorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewPaymentToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label lblRecords;
         private System.Windows.Forms.TextBox txtFilter;

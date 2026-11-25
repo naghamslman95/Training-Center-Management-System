@@ -114,5 +114,29 @@ namespace Training_Center_Management_System
                     e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != '.';
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmSelectEnrollment frm = new frmSelectEnrollment();
+            if (frm.ShowDialog() == DialogResult.OK)
+                _RefreshPaymentsList();
+        }
+
+        private void addNewPaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSelectEnrollment frm = new frmSelectEnrollment();
+            if (frm.ShowDialog() == DialogResult.OK)
+                _RefreshPaymentsList();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedPaymentID() != -1)
+            {
+                frmAddEditPayment frm = new frmAddEditPayment(SelectedPaymentID());
+                if (frm.ShowDialog() == DialogResult.OK)
+                    _RefreshPaymentsList();
+            }
+        }
     }
 }
