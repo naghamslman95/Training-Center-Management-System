@@ -138,5 +138,25 @@ namespace Training_Center_Management_System
                     _RefreshPaymentsList();
             }
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int PaymentID = SelectedPaymentID();
+            if (PaymentID != -1)
+            {
+                if (MessageBox.Show("Are you sure you want to delete payment [" + PaymentID + "]?",
+                "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    if (clsPayment.DeletePayment(PaymentID))
+                    {
+                        MessageBox.Show("Payment is deleted successfully");
+                        _RefreshPaymentsList();
+                    }
+                    else
+                        MessageBox.Show("Payment is not deleted because there is data linked to it");
+
+                }
+            }
+        }
     }
 }
