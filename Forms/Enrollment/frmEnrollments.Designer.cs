@@ -137,6 +137,7 @@
             this.dgvEnrollments.ReadOnly = true;
             this.dgvEnrollments.Size = new System.Drawing.Size(794, 260);
             this.dgvEnrollments.TabIndex = 62;
+            this.dgvEnrollments.DoubleClick += new System.EventHandler(this.dgvEnrollments_DoubleClick);
             // 
             // contextMenuStrip1
             // 
@@ -150,7 +151,7 @@
             this.cancelToolStripMenuItem,
             this.setCompleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 170);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 148);
             // 
             // addNewInstructorToolStripMenuItem
             // 
@@ -169,6 +170,7 @@
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
             this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 

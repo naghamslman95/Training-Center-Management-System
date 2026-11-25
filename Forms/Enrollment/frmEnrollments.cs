@@ -242,5 +242,23 @@ namespace Training_Center_Management_System
                     MessageBox.Show("Error while setting enrollment complete");
             }
         }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedEnrollmentID() != -1)
+            {
+                frmEnrollmentDetails frm = new frmEnrollmentDetails(SelectedEnrollmentID());
+                frm.ShowDialog();
+            }
+        }
+
+        private void dgvEnrollments_DoubleClick(object sender, EventArgs e)
+        {
+            if (SelectedEnrollmentID() != -1)
+            {
+                frmEnrollmentDetails frm = new frmEnrollmentDetails(SelectedEnrollmentID());
+                frm.ShowDialog();
+            }
+        }
     }
 }
