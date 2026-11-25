@@ -194,12 +194,14 @@
             this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
             this.cancelToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.cancelToolStripMenuItem.Text = "Cancel";
+            this.cancelToolStripMenuItem.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
             // 
             // setCompleteToolStripMenuItem
             // 
             this.setCompleteToolStripMenuItem.Name = "setCompleteToolStripMenuItem";
             this.setCompleteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.setCompleteToolStripMenuItem.Text = "Set Complete";
+            this.setCompleteToolStripMenuItem.Click += new System.EventHandler(this.setCompleteToolStripMenuItem_Click);
             // 
             // label1
             // 

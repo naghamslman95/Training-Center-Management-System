@@ -169,7 +169,7 @@ namespace Training_Center_Management_System
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SelectedEnrollmentID()!=-1)
+            if (SelectedEnrollmentID() != -1)
             {
                 frmAddEditEnrollment frm = new frmAddEditEnrollment(SelectedEnrollmentID());
                 if (frm.ShowDialog() == DialogResult.OK)
@@ -184,7 +184,7 @@ namespace Training_Center_Management_System
             int EnrollmentID = SelectedEnrollmentID();
             if (EnrollmentID != -1)
             {
-                if (clsPayment.GetTotalPaidByEnrollmentID(EnrollmentID)>0)
+                if (clsPayment.GetTotalPaidByEnrollmentID(EnrollmentID) > 0)
                 {
                     MessageBox.Show("Can not delete this enrollment because there are payments linked to it");
                     return;
@@ -200,6 +200,46 @@ namespace Training_Center_Management_System
                     else
                         MessageBox.Show("Failed to delete enrollment");
                 }
+            }
+        }
+
+        private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int EnrollmentID = SelectedEnrollmentID();
+            if (EnrollmentID == -1) return;
+            clsEnrollment Enrollment = clsEnrollment.FindByEnrollmentID(EnrollmentID);
+            if (Enrollment == null) return;
+
+            if (MessageBox.Show("Are you sure you want to cancel enrollment [" + EnrollmentID + "]?",
+                "Confirm Cancel", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                if (Enrollment.Cancel())
+                {
+                    MessageBox.Show("Enrollment is cancelled successfully");
+                    _RefreshEnrollmentsList();
+                }
+                else
+                    MessageBox.Show("Error while cancelling enrollment");
+            }
+        }
+
+        private void setCompleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int EnrollmentID = SelectedEnrollmentID();
+            if (EnrollmentID == -1) return;
+            clsEnrollment Enrollment = clsEnrollment.FindByEnrollmentID(EnrollmentID);
+            if (Enrollment == null) return;
+
+            if (MessageBox.Show("Are you sure you want to set enrollment [" + EnrollmentID + "] complete?",
+                "Confirm complete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                if (Enrollment.SetComplete())
+                {
+                    MessageBox.Show("Enrollment is set complete successfully");
+                    _RefreshEnrollmentsList();
+                }
+                else
+                    MessageBox.Show("Error while setting enrollment complete");
             }
         }
     }
