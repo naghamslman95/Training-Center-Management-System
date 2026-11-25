@@ -158,5 +158,23 @@ namespace Training_Center_Management_System
                 }
             }
         }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedPaymentID()!=-1)
+            {
+                frmPaymentDetails frm = new frmPaymentDetails(SelectedPaymentID());
+                frm.ShowDialog();
+            }
+        }
+
+        private void dgvPayments_DoubleClick(object sender, EventArgs e)
+        {
+            if (SelectedPaymentID() != -1)
+            {
+                frmPaymentDetails frm = new frmPaymentDetails(SelectedPaymentID());
+                frm.ShowDialog();
+            }
+        }
     }
 }
