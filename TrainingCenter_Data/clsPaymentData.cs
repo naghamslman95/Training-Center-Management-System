@@ -112,9 +112,9 @@ namespace TrainingCenter_Data
             DataTable DT = new DataTable();
 
             string query = @"SELECT
-                            Payments.PaymentID, Payments.EnrollmentID, Courses.Title, 
-                            (People.FirstName + ' ' + People.SecondName + ' ' + People.LastName )As FullName,
-                            Enrollments.TotalPrice, Payments.PaymentAmount, Payments.PaymentDate,
+                            Payments.PaymentID, Payments.EnrollmentID, Courses.Title as Course, 
+                            (People.FirstName + ' ' + People.SecondName + ' ' + People.LastName )As StudentName,
+                            Enrollments.TotalPrice, Payments.PaymentAmount, Payments.PaymentDate, Enrollments.EnrollmentStatus,
                             Users.UserName as CreatedBy
                             FROM Payments
                             INNER JOIN Enrollments
@@ -126,7 +126,8 @@ namespace TrainingCenter_Data
                             INNER JOIN People
                                       ON People.PersonID = Students.PersonID
                             INNER JOIN Users
-                                  ON Users.UserID = Payments.CreatedByUserID";
+                                  ON Users.UserID = Payments.CreatedByUserID
+                            ORDER BY Payments.PaymentDate Desc";
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
