@@ -197,6 +197,36 @@ namespace TrainingCenter_Data
                 }
             }
         }
+        public static DataTable GetCourseEnrollmentsByCourseID(int CourseID)
+        {
+            DataTable DT = new DataTable();
+
+            string query = @"SELECT
+                            Enrollments.EnrollmentID, 
+                            (People.FirstName + ' ' + People.SecondName + ' ' + People.LastName )As StudentName,
+                            Enrollments.TotalPrice, Enrollments.EnrollmentDate, Enrollments.EnrollmentStatus,
+                            Users.UserName as CreatedBy
+                            FROM Enrollments
+                            INNER JOIN Students
+                                     ON Students.StudentID = Enrollments.StudentID
+                            INNER JOIN People
+                                     ON People.PersonID = Students.PersonID
+                            INNER JOIN Users
+                                  ON Users.UserID = Enrollments.CreatedByUserID
+                            Where Enrollments.CourseID = @CourseID";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.Add("@CourseID", SqlDbType.Int).Value = CourseID;
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DT.Load(reader);
+                    return DT;
+                }
+            }
+        }
 
         public static int GetStudentActiveEnrollmentForCourse(int StudentID, int CourseID)
         {

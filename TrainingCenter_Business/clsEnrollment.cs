@@ -195,6 +195,10 @@ namespace TrainingCenter_Business
         {
             return clsEnrollmentData.GetStudentEnrollmentsByStudentID(StudentID);
         }
+        public static DataTable GetCourseEnrollmentsByCourseID(int CourseID)
+        {
+            return clsEnrollmentData.GetCourseEnrollmentsByCourseID(CourseID);
+        }
         public static int GetStudentActiveEnrollmentForCourse(int StudentID, int CourseID)
         {
             return clsEnrollmentData.GetStudentActiveEnrollmentForCourse(StudentID, CourseID);
