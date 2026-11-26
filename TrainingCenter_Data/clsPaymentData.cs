@@ -207,6 +207,23 @@ namespace TrainingCenter_Data
                 return Convert.ToDecimal(result);
             }
         }
+        public static decimal GetCollectedRevenuePerMonth(DateTime Start, DateTime NextMonthStart)
+        {
+            string query = @"Select ISNULL(SUM(Payments.PaymentAmount), 0) from Payments 
+                              WHERE Payments.PaymentDate >= @Start
+                                AND Payments.PaymentDate < @NextMonthStart ";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.Add("@Start", SqlDbType.DateTime).Value = Start;
+                command.Parameters.Add("@NextMonthStart", SqlDbType.DateTime).Value = NextMonthStart;
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+                return Convert.ToDecimal(result);
+            }
+        }
+
 
     }
 }
