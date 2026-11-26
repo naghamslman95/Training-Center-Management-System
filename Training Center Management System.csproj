@@ -168,10 +168,10 @@
     <Compile Include="Forms\Enrollment\frmEnrollmentDetails.Designer.cs">
       <DependentUpon>frmEnrollmentDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddEditPayment.cs">
+    <Compile Include="Forms\Payments\frmAddEditPayment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddEditPayment.Designer.cs">
+    <Compile Include="Forms\Payments\frmAddEditPayment.Designer.cs">
       <DependentUpon>frmAddEditPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -216,22 +216,22 @@
     <Compile Include="Forms\Students\frmStudentDetails.Designer.cs">
       <DependentUpon>frmStudentDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPaymentDetails.cs">
+    <Compile Include="Forms\Payments\frmPaymentDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPaymentDetails.Designer.cs">
+    <Compile Include="Forms\Payments\frmPaymentDetails.Designer.cs">
       <DependentUpon>frmPaymentDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPayments.cs">
+    <Compile Include="Forms\Payments\frmPayments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPayments.Designer.cs">
+    <Compile Include="Forms\Payments\frmPayments.Designer.cs">
       <DependentUpon>frmPayments.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSelectEnrollment.cs">
+    <Compile Include="Forms\Payments\frmSelectEnrollment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSelectEnrollment.Designer.cs">
+    <Compile Include="Forms\Payments\frmSelectEnrollment.Designer.cs">
       <DependentUpon>frmSelectEnrollment.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -338,7 +338,7 @@
     <EmbeddedResource Include="Forms\Enrollment\frmEnrollmentDetails.resx">
       <DependentUpon>frmEnrollmentDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddEditPayment.resx">
+    <EmbeddedResource Include="Forms\Payments\frmAddEditPayment.resx">
       <DependentUpon>frmAddEditPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
@@ -362,13 +362,13 @@
     <EmbeddedResource Include="Forms\Students\frmStudentDetails.resx">
       <DependentUpon>frmStudentDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPaymentDetails.resx">
+    <EmbeddedResource Include="Forms\Payments\frmPaymentDetails.resx">
       <DependentUpon>frmPaymentDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPayments.resx">
+    <EmbeddedResource Include="Forms\Payments\frmPayments.resx">
       <DependentUpon>frmPayments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSelectEnrollment.resx">
+    <EmbeddedResource Include="Forms\Payments\frmSelectEnrollment.resx">
       <DependentUpon>frmSelectEnrollment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
