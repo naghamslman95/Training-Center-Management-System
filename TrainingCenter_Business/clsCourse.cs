@@ -134,5 +134,9 @@ namespace TrainingCenter_Business
         {
             return clsCourseData.DoesInstructorHaveCourses(InstructorID);
         }
+        public static DataTable GetInstructorCourses(int InstructorID)
+        {
+            return clsCourseData.GetInstructorCoursesByInstructorID(InstructorID);
+        }
     }
 }

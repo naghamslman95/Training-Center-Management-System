@@ -174,5 +174,31 @@ namespace TrainingCenter_Data
             }
         }
 
+        public static DataTable GetInstructorCoursesByInstructorID(int InstructorID)
+        {
+            DataTable DT = new DataTable();
+
+            string query = @"SELECT
+                            Courses.CourseID,
+                           Courses.Title, Courses.Duration, Courses.Price,Courses.TotalSeats,
+                            Users.UserName as CreatedBy
+                            FROM Courses
+                            INNER JOIN Users
+                                  ON Users.UserID = Courses.CreatedByUserID
+                            Where Courses.InstructorID = @InstructorID";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.Add("@InstructorID", SqlDbType.Int).Value = InstructorID;
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DT.Load(reader);
+                    return DT;
+                }
+            }
+        }
+
     }
 }
