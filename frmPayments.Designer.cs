@@ -195,6 +195,7 @@
             this.dgvPayments.ReadOnly = true;
             this.dgvPayments.Size = new System.Drawing.Size(824, 260);
             this.dgvPayments.TabIndex = 71;
+            this.dgvPayments.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPayments_CellMouseDown);
             this.dgvPayments.DoubleClick += new System.EventHandler(this.dgvPayments_DoubleClick);
             // 
             // label1

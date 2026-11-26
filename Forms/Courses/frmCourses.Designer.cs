@@ -36,7 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvCourses = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addNewInstructorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -45,6 +44,7 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ShowEnrollmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -137,18 +137,8 @@
             this.dgvCourses.ReadOnly = true;
             this.dgvCourses.Size = new System.Drawing.Size(794, 260);
             this.dgvCourses.TabIndex = 54;
+            this.dgvCourses.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCourses_CellMouseDown);
             this.dgvCourses.DoubleClick += new System.EventHandler(this.dgvCourses_DoubleClick);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(303, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 32);
-            this.label1.TabIndex = 53;
-            this.label1.Text = "Manage Courses";
             // 
             // contextMenuStrip1
             // 
@@ -161,51 +151,62 @@
             this.toolStripSeparator1,
             this.ShowEnrollmentsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 148);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(170, 126);
             // 
             // addNewInstructorToolStripMenuItem
             // 
             this.addNewInstructorToolStripMenuItem.Name = "addNewInstructorToolStripMenuItem";
-            this.addNewInstructorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewInstructorToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.addNewInstructorToolStripMenuItem.Text = "Add New Course";
             this.addNewInstructorToolStripMenuItem.Click += new System.EventHandler(this.addNewInstructorToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(166, 6);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(166, 6);
             // 
             // ShowEnrollmentsToolStripMenuItem
             // 
             this.ShowEnrollmentsToolStripMenuItem.Name = "ShowEnrollmentsToolStripMenuItem";
-            this.ShowEnrollmentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ShowEnrollmentsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.ShowEnrollmentsToolStripMenuItem.Text = "Show Enrollments";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(303, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(203, 32);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Manage Courses";
             // 
             // frmCourses
             // 

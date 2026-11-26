@@ -57,6 +57,7 @@
             this.dgvStudentEnrollments.Size = new System.Drawing.Size(605, 114);
             this.dgvStudentEnrollments.TabIndex = 1;
             this.dgvStudentEnrollments.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStudentEnrollments_CellMouseDoubleClick);
+            this.dgvStudentEnrollments.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStudentEnrollments_CellMouseDown);
             // 
             // btnSelect
             // 

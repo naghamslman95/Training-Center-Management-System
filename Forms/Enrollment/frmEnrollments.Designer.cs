@@ -137,6 +137,7 @@
             this.dgvEnrollments.ReadOnly = true;
             this.dgvEnrollments.Size = new System.Drawing.Size(794, 260);
             this.dgvEnrollments.TabIndex = 62;
+            this.dgvEnrollments.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEnrollments_CellMouseDown);
             this.dgvEnrollments.DoubleClick += new System.EventHandler(this.dgvEnrollments_DoubleClick);
             // 
             // contextMenuStrip1

@@ -89,5 +89,11 @@ namespace Training_Center_Management_System
         {
             _SelectEnrollment();
         }
+
+        private void dgvStudentEnrollments_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+                dgvStudentEnrollments.CurrentCell = dgvStudentEnrollments.Rows[e.RowIndex].Cells["EnrollmentID"];
+        }
     }
 }

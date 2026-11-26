@@ -176,5 +176,11 @@ namespace Training_Center_Management_System
                 frm.ShowDialog();
             }
         }
+
+        private void dgvPayments_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+                dgvPayments.CurrentCell = dgvPayments.Rows[e.RowIndex].Cells["PaymentID"];
+        }
     }
 }

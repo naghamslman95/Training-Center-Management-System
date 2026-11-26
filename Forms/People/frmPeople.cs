@@ -181,5 +181,11 @@ namespace Training_Center_Management_System
                 }
             }
         }
+
+        private void dgvPeople_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+                dgvPeople.CurrentCell = dgvPeople.Rows[e.RowIndex].Cells["PersonID"];
+        }
     }
 }

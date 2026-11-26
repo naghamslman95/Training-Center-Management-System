@@ -260,5 +260,11 @@ namespace Training_Center_Management_System
                 frm.ShowDialog();
             }
         }
+
+        private void dgvEnrollments_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+                dgvEnrollments.CurrentCell = dgvEnrollments.Rows[e.RowIndex].Cells["EnrollmentID"];
+        }
     }
 }
