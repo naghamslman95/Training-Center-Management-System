@@ -49,8 +49,8 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.pnlTimeAndUser = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.pnlTimeAndUser.SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             this.peopleToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
-            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(75, 19);
             this.peopleToolStripMenuItem.Text = "&People";
             this.peopleToolStripMenuItem.Click += new System.EventHandler(this.peopleToolStripMenuItem_Click);
             // 
@@ -90,7 +90,7 @@
             // 
             this.usersToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(75, 19);
             this.usersToolStripMenuItem.Text = "&Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
@@ -98,7 +98,7 @@
             // 
             this.studentsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
-            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(75, 19);
             this.studentsToolStripMenuItem.Text = "S&tudents";
             this.studentsToolStripMenuItem.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click);
             // 
@@ -106,7 +106,7 @@
             // 
             this.coursesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.coursesToolStripMenuItem.Name = "coursesToolStripMenuItem";
-            this.coursesToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.coursesToolStripMenuItem.Size = new System.Drawing.Size(75, 19);
             this.coursesToolStripMenuItem.Text = "&Courses";
             this.coursesToolStripMenuItem.Click += new System.EventHandler(this.coursesToolStripMenuItem_Click);
             // 
@@ -114,7 +114,7 @@
             // 
             this.instructorsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.instructorsToolStripMenuItem.Name = "instructorsToolStripMenuItem";
-            this.instructorsToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.instructorsToolStripMenuItem.Size = new System.Drawing.Size(75, 19);
             this.instructorsToolStripMenuItem.Text = "I&nstructors";
             this.instructorsToolStripMenuItem.Click += new System.EventHandler(this.instructorsToolStripMenuItem_Click);
             // 
@@ -122,7 +122,7 @@
             // 
             this.enrollmentToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.enrollmentToolStripMenuItem.Name = "enrollmentToolStripMenuItem";
-            this.enrollmentToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.enrollmentToolStripMenuItem.Size = new System.Drawing.Size(75, 19);
             this.enrollmentToolStripMenuItem.Text = "&Enrollments";
             this.enrollmentToolStripMenuItem.Click += new System.EventHandler(this.enrollmentToolStripMenuItem_Click);
             // 
@@ -130,7 +130,7 @@
             // 
             this.paymentsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.paymentsToolStripMenuItem.Name = "paymentsToolStripMenuItem";
-            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(75, 19);
             this.paymentsToolStripMenuItem.Text = "Pa&yments";
             this.paymentsToolStripMenuItem.Click += new System.EventHandler(this.paymentsToolStripMenuItem_Click);
             // 
@@ -142,7 +142,7 @@
             this.courseToolStripMenuItem});
             this.reportsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(75, 19);
             this.reportsToolStripMenuItem.Text = "&Reports";
             // 
             // monthlyReportToolStripMenuItem
@@ -150,7 +150,7 @@
             this.monthlyReportToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.monthlyReportToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.monthlyReportToolStripMenuItem.Name = "monthlyReportToolStripMenuItem";
-            this.monthlyReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.monthlyReportToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.monthlyReportToolStripMenuItem.Text = "&Monthly Report";
             this.monthlyReportToolStripMenuItem.Click += new System.EventHandler(this.monthlyReportToolStripMenuItem_Click);
             // 
@@ -159,7 +159,7 @@
             this.instructorReportToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.instructorReportToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.instructorReportToolStripMenuItem.Name = "instructorReportToolStripMenuItem";
-            this.instructorReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.instructorReportToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.instructorReportToolStripMenuItem.Text = "I&nstructor Report";
             this.instructorReportToolStripMenuItem.Click += new System.EventHandler(this.instructorReportToolStripMenuItem_Click);
             // 
@@ -168,7 +168,7 @@
             this.courseToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.courseToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.courseToolStripMenuItem.Name = "courseToolStripMenuItem";
-            this.courseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.courseToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.courseToolStripMenuItem.Text = "Co&urse Statics";
             this.courseToolStripMenuItem.Click += new System.EventHandler(this.courseToolStripMenuItem_Click);
             // 
@@ -180,7 +180,7 @@
             this.languageToolStripMenuItem});
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(75, 19);
             this.settingsToolStripMenuItem.Text = "Sett&ings";
             // 
             // appearanceToolStripMenuItem
@@ -256,18 +256,6 @@
             this.pnlTimeAndUser.Size = new System.Drawing.Size(712, 36);
             this.pnlTimeAndUser.TabIndex = 9;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources.logo___;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 376);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 74);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -281,6 +269,18 @@
             this.label1.Size = new System.Drawing.Size(43, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "User: ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources.logo___;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 376);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 74);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // timer1
             // 
@@ -301,12 +301,10 @@
             this.Controls.Add(this.lblDatetime);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
-            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "Training Center";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.MdiChildActivate += new System.EventHandler(this.Form1_MdiChildActivate);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnlTimeAndUser.ResumeLayout(false);

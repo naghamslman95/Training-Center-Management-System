@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrainingCenter_Business;
 
@@ -31,49 +25,37 @@ namespace Training_Center_Management_System
             Application.EnableVisualStyles();
 
         }
-
-
-        private void OpenForm (Form formToShow)
-        {
-            var ExistingForm = this.MdiChildren.FirstOrDefault(f => f.GetType()== formToShow.GetType());
-            if (ExistingForm != null)
-                ExistingForm.Focus();
-            else
-            {
-                formToShow.MdiParent = this;
-                formToShow.Show();
-            }
-        }
-
-
         private void monthlyReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!_IsAdmin())
             {
-                MessageBox.Show("Only admins can get to reports");
+                MessageBox.Show("Only admins can access reports");
                 return;
             }
-            OpenForm(new frmMonthlyReport());
+            frmMonthlyReport frm = new frmMonthlyReport();
+            frm.ShowDialog();
         }
        
         private void instructorReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!_IsAdmin())
             {
-                MessageBox.Show("Only admins can get to reports");
+                MessageBox.Show("Only admins can access reports");
                 return;
             }
-            OpenForm( new frmInstructorReport());
+            frmInstructorReport frm = new frmInstructorReport();
+            frm.ShowDialog();
         }
       
         private void courseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!_IsAdmin())
             {
-                MessageBox.Show("Only admins can get to reports");
+                MessageBox.Show("Only admins can access reports");
                 return;
             }
-            OpenForm( new frmCourseStatics());
+            frmCourseStatics frm = new frmCourseStatics();
+            frm.ShowDialog();
         }
 
         private void appearanceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,21 +82,6 @@ namespace Training_Center_Management_System
             reportsToolStripMenuItem.Visible = (clsGlobal.CurrentUser.Role == clsUser.enRole.Admin);
             lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             lblUser.Text = clsGlobal.CurrentUser.UserName;
-        }
-
-       
-        private void Form1_MdiChildActivate(object sender, EventArgs e)
-        {
-            if (this.ActiveMdiChild!= null)
-            {
-                pictureBox1.Visible = false;
-                pnlTimeAndUser.Visible = false;
-            }
-            else
-            {
-                pictureBox1.Visible = true;
-                pnlTimeAndUser.Visible = true;
-            }
         }
 
         private void coursesToolStripMenuItem_Click(object sender, EventArgs e)
