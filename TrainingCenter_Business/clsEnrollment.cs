@@ -234,5 +234,15 @@ namespace TrainingCenter_Business
             }
             return TotalCount;
         }
+        public static decimal GetBilledPerMonth(DateTime Start, DateTime NextMonthStart)
+        {
+            return clsEnrollmentData.GetBilledPerMonth(Start, NextMonthStart);
+        }
+        public static decimal GetOutstandingPerMonth(DateTime Start, DateTime NextMonthStart)
+        {
+            decimal Billed = clsEnrollment.GetBilledPerMonth(Start, NextMonthStart);
+            decimal Paid = clsPayment.GetPaidForMonthEnrollments(Start, NextMonthStart);
+            return Billed - Paid;
+        }
     }
 }

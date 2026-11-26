@@ -148,5 +148,9 @@ namespace TrainingCenter_Business
         {
             return clsPaymentData.GetCollectedRevenuePerMonth(Start, NextMonthStart);
         }
+        public static decimal GetPaidForMonthEnrollments(DateTime Start, DateTime NextMonthStart)
+        {
+            return clsPaymentData.GetPaidForMonthEnrollments(Start, NextMonthStart);
+        }
     }
 }

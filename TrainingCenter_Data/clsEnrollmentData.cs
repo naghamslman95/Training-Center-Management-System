@@ -305,5 +305,24 @@ namespace TrainingCenter_Data
             }
         }
 
+        public static decimal GetBilledPerMonth(DateTime Start, DateTime NextMonthStart)
+        {
+            string query = @"Select ISNULL(SUM(Enrollments.TotalPrice), 0) from Enrollments 
+                              WHERE Enrollments.EnrollmentDate >= @Start
+                                AND Enrollments.EnrollmentDate < @NextMonthStart
+                                AND EnrollmentStatus <> 2";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.Add("@Start", SqlDbType.DateTime).Value = Start;
+                command.Parameters.Add("@NextMonthStart", SqlDbType.DateTime).Value = NextMonthStart;
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+                return Convert.ToDecimal(result);
+            }
+        }
+
+
     }
 }
