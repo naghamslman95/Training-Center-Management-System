@@ -283,5 +283,27 @@ namespace TrainingCenter_Data
                 return Convert.ToInt32(result);
             }
         }
+
+        public static DataTable GetEnrollmentsCountByStatus(DateTime Start, DateTime NextMonthStart)
+        {
+            DataTable DT = new DataTable();
+            string query = @"Select Count(*) as Total, EnrollmentStatus from Enrollments 
+                             WHERE Enrollments.EnrollmentDate >= @Start
+                                AND Enrollments.EnrollmentDate < @NextMonthStart
+                             Group by EnrollmentStatus";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.Add("@Start", SqlDbType.DateTime).Value = Start;
+                command.Parameters.Add("@NextMonthStart", SqlDbType.DateTime).Value = NextMonthStart;
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DT.Load(reader);
+                    return DT;
+                }
+            }
+        }
+
     }
 }

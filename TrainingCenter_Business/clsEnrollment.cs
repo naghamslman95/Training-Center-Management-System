@@ -215,5 +215,24 @@ namespace TrainingCenter_Business
         {
             return clsEnrollmentData.ActiveEnrollmentsPerCourse(CourseID);
         }
+        public static int GetEnrollmentsPerMonth(DateTime Start, DateTime NextMonthStart)
+        {
+            DataTable DT = clsEnrollmentData.GetEnrollmentsCountByStatus(Start, NextMonthStart);
+            int TotalCount = 0;
+            foreach (DataRow row in DT.Rows)
+                TotalCount += Convert.ToInt32(row["Total"]);
+            return TotalCount;
+        }
+        public static int GetEnrollmentStatusCountPerMonth(DateTime Start, DateTime NextMonthStart, enEnrollmentStatus Status)
+        {
+            DataTable DT = clsEnrollmentData.GetEnrollmentsCountByStatus(Start, NextMonthStart);
+            int TotalCount = 0;
+            foreach (DataRow row in DT.Rows)
+            {
+                if (Convert.ToInt32(row["EnrollmentStatus"]) == (int)Status)
+                       TotalCount += Convert.ToInt32(row["Total"]);
+            }
+            return TotalCount;
+        }
     }
 }
