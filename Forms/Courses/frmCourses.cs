@@ -180,5 +180,14 @@ namespace Training_Center_Management_System
             if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
                 dgvCourses.CurrentCell = dgvCourses.Rows[e.RowIndex].Cells["CourseID"];
         }
+
+        private void ShowEnrollmentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedCourseID()!=-1)
+            {
+                frmCourseEnrollments frm = new frmCourseEnrollments(SelectedCourseID());
+                frm.ShowDialog();
+            }
+        }
     }
 }
