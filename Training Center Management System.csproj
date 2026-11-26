@@ -174,6 +174,12 @@
     <Compile Include="Forms\Payments\frmAddEditPayment.Designer.cs">
       <DependentUpon>frmAddEditPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInstructorCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInstructorCourses.Designer.cs">
+      <DependentUpon>frmInstructorCourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Payments\frmAddEditPayment.resx">
       <DependentUpon>frmAddEditPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInstructorCourses.resx">
+      <DependentUpon>frmInstructorCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

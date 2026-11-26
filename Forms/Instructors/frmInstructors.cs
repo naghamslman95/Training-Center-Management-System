@@ -153,5 +153,14 @@ namespace Training_Center_Management_System
             if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
                 dgvInstructors.CurrentCell = dgvInstructors.Rows[e.RowIndex].Cells["InstructorID"];
         }
+
+        private void ShowCoursesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedInstructorID() != -1)
+            {
+                frmInstructorCourses frm = new frmInstructorCourses(SelectedInstructorID());
+                frm.ShowDialog();
+            }
+        }
     }
 }
