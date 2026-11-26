@@ -47,6 +47,8 @@
             this.setCompleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.cbStatusFilter = new System.Windows.Forms.ComboBox();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.addPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollments)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -150,9 +152,11 @@
             this.deleteToolStripMenuItem,
             this.toolStripSeparator1,
             this.cancelToolStripMenuItem,
-            this.setCompleteToolStripMenuItem});
+            this.setCompleteToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.addPaymentToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 170);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 198);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // addNewInstructorToolStripMenuItem
@@ -234,6 +238,18 @@
             this.cbStatusFilter.TabIndex = 69;
             this.cbStatusFilter.SelectedIndexChanged += new System.EventHandler(this.cbStatusFilter_SelectedIndexChanged);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(181, 6);
+            // 
+            // addPaymentToolStripMenuItem
+            // 
+            this.addPaymentToolStripMenuItem.Name = "addPaymentToolStripMenuItem";
+            this.addPaymentToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.addPaymentToolStripMenuItem.Text = "Add Payment";
+            this.addPaymentToolStripMenuItem.Click += new System.EventHandler(this.addPaymentToolStripMenuItem_Click);
+            // 
             // frmEnrollments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,5 +294,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem cancelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setCompleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem addPaymentToolStripMenuItem;
     }
 }

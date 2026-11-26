@@ -288,9 +288,17 @@ namespace Training_Center_Management_System
                     (Convert.ToInt32(dgvEnrollments.CurrentRow.Cells["EnrollmentStatus"].Value) == 1 && clsPayment.GetTotalPaidByEnrollmentID(SelectedEnrollmentID()) == 0);
             deleteToolStripMenuItem.Enabled = (Convert.ToInt32(dgvEnrollments.CurrentRow.Cells["EnrollmentStatus"].Value) == 1);
             cancelToolStripMenuItem.Enabled = deleteToolStripMenuItem.Enabled;
-            setCompleteToolStripMenuItem.Enabled = deleteToolStripMenuItem.Enabled;   
+            setCompleteToolStripMenuItem.Enabled = deleteToolStripMenuItem.Enabled;
+            addPaymentToolStripMenuItem.Enabled = (Convert.ToInt32(dgvEnrollments.CurrentRow.Cells["EnrollmentStatus"].Value) != 2);
         }
 
-
+        private void addPaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedEnrollmentID() == -1) return;
+            frmAddEditPayment frm = new frmAddEditPayment();
+            frm.EnrollmentID = SelectedEnrollmentID();
+            if (frm.ShowDialog() == DialogResult.OK) 
+                _RefreshEnrollmentsList();
+        }
     }
 }
