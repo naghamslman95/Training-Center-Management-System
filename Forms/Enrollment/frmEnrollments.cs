@@ -157,8 +157,7 @@ namespace Training_Center_Management_System
                 _RefreshEnrollmentsList();
             }
         }
-
-        private void addNewInstructorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addNewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddEditEnrollment frm = new frmAddEditEnrollment();
             if (frm.ShowDialog() == DialogResult.OK)
@@ -166,7 +165,6 @@ namespace Training_Center_Management_System
                 _RefreshEnrollmentsList();
             }
         }
-
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (SelectedEnrollmentID() != -1)
@@ -266,5 +264,33 @@ namespace Training_Center_Management_System
             if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
                 dgvEnrollments.CurrentCell = dgvEnrollments.Rows[e.RowIndex].Cells["EnrollmentID"];
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            if (dgvEnrollments.CurrentRow == null)
+            {
+                foreach (ToolStripItem item in contextMenuStrip1.Items)
+                {
+                    if (item.Name != "addNewToolStripMenuItem")
+                        item.Enabled = false;
+                }
+                return;
+            }
+            else
+            {
+                foreach (ToolStripItem item in contextMenuStrip1.Items)
+                {
+                    if (item.Name != "addNewToolStripMenuItem")
+                        item.Enabled = true;
+                }
+            }
+                editToolStripMenuItem.Enabled =
+                    (Convert.ToInt32(dgvEnrollments.CurrentRow.Cells["EnrollmentStatus"].Value) == 1 && clsPayment.GetTotalPaidByEnrollmentID(SelectedEnrollmentID()) == 0);
+            deleteToolStripMenuItem.Enabled = (Convert.ToInt32(dgvEnrollments.CurrentRow.Cells["EnrollmentStatus"].Value) == 1);
+            cancelToolStripMenuItem.Enabled = deleteToolStripMenuItem.Enabled;
+            setCompleteToolStripMenuItem.Enabled = deleteToolStripMenuItem.Enabled;   
+        }
+
+
     }
 }

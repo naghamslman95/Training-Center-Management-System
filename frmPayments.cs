@@ -182,5 +182,28 @@ namespace Training_Center_Management_System
             if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
                 dgvPayments.CurrentCell = dgvPayments.Rows[e.RowIndex].Cells["PaymentID"];
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            if (dgvPayments.CurrentRow == null)
+            {
+                foreach (ToolStripItem item in contextMenuStrip1.Items)
+                {
+                    if (item.Name != "addNewPaymentToolStripMenuItem")
+                        item.Enabled = false;
+                }
+                return;
+            }
+            else
+            {
+                foreach (ToolStripItem item in contextMenuStrip1.Items)
+                {
+                    if (item.Name != "addNewPaymentToolStripMenuItem")
+                        item.Enabled = true;
+                }
+            }
+
+            editToolStripMenuItem.Enabled = (Convert.ToInt32(dgvPayments.CurrentRow.Cells["EnrollmentStatus"].Value)!=2);
+        }
     }
 }

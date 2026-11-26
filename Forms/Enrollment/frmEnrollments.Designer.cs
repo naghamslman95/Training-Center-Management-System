@@ -152,14 +152,15 @@
             this.cancelToolStripMenuItem,
             this.setCompleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 148);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(185, 170);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // addNewInstructorToolStripMenuItem
             // 
             this.addNewInstructorToolStripMenuItem.Name = "addNewInstructorToolStripMenuItem";
             this.addNewInstructorToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.addNewInstructorToolStripMenuItem.Text = "Add New Enrollment";
-            this.addNewInstructorToolStripMenuItem.Click += new System.EventHandler(this.addNewInstructorToolStripMenuItem_Click);
+            this.addNewInstructorToolStripMenuItem.Click += new System.EventHandler(this.addNewToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
