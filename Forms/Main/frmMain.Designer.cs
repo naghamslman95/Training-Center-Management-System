@@ -36,6 +36,7 @@
             this.coursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instructorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enrollmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instructorReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,13 +45,13 @@
             this.appearanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filePathsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblDatetime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.pnlTimeAndUser = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.pnlTimeAndUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,7 +74,7 @@
             this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(126, 450);
+            this.menuStrip1.Size = new System.Drawing.Size(88, 450);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -125,6 +126,14 @@
             this.enrollmentToolStripMenuItem.Text = "&Enrollments";
             this.enrollmentToolStripMenuItem.Click += new System.EventHandler(this.enrollmentToolStripMenuItem_Click);
             // 
+            // paymentsToolStripMenuItem
+            // 
+            this.paymentsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.paymentsToolStripMenuItem.Name = "paymentsToolStripMenuItem";
+            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.paymentsToolStripMenuItem.Text = "Pa&yments";
+            this.paymentsToolStripMenuItem.Click += new System.EventHandler(this.paymentsToolStripMenuItem_Click);
+            // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -141,7 +150,7 @@
             this.monthlyReportToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.monthlyReportToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.monthlyReportToolStripMenuItem.Name = "monthlyReportToolStripMenuItem";
-            this.monthlyReportToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.monthlyReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.monthlyReportToolStripMenuItem.Text = "&Monthly Report";
             this.monthlyReportToolStripMenuItem.Click += new System.EventHandler(this.monthlyReportToolStripMenuItem_Click);
             // 
@@ -150,7 +159,7 @@
             this.instructorReportToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.instructorReportToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.instructorReportToolStripMenuItem.Name = "instructorReportToolStripMenuItem";
-            this.instructorReportToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.instructorReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.instructorReportToolStripMenuItem.Text = "I&nstructor Report";
             this.instructorReportToolStripMenuItem.Click += new System.EventHandler(this.instructorReportToolStripMenuItem_Click);
             // 
@@ -159,7 +168,7 @@
             this.courseToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.courseToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.courseToolStripMenuItem.Name = "courseToolStripMenuItem";
-            this.courseToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.courseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.courseToolStripMenuItem.Text = "Co&urse Statics";
             this.courseToolStripMenuItem.Click += new System.EventHandler(this.courseToolStripMenuItem_Click);
             // 
@@ -179,7 +188,7 @@
             this.appearanceToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.appearanceToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
-            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.appearanceToolStripMenuItem.Text = "A&ppearance ";
             this.appearanceToolStripMenuItem.Click += new System.EventHandler(this.appearanceToolStripMenuItem_Click);
             // 
@@ -188,7 +197,7 @@
             this.filePathsToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.filePathsToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.filePathsToolStripMenuItem.Name = "filePathsToolStripMenuItem";
-            this.filePathsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.filePathsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.filePathsToolStripMenuItem.Text = "&File Paths";
             this.filePathsToolStripMenuItem.Click += new System.EventHandler(this.filePathsToolStripMenuItem_Click);
             // 
@@ -197,14 +206,9 @@
             this.languageToolStripMenuItem.BackColor = System.Drawing.Color.DarkCyan;
             this.languageToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            this.languageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.languageToolStripMenuItem.Text = "L&anguage";
             this.languageToolStripMenuItem.Click += new System.EventHandler(this.languageToolStripMenuItem_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // lblDatetime
             // 
@@ -220,11 +224,11 @@
             this.lblDate.BackColor = System.Drawing.Color.DarkCyan;
             this.lblDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lblDate.Location = new System.Drawing.Point(25, 11);
+            this.lblDate.Location = new System.Drawing.Point(25, 10);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(43, 17);
+            this.lblDate.Size = new System.Drawing.Size(36, 17);
             this.lblDate.TabIndex = 7;
-            this.lblDate.Text = "label2";
+            this.lblDate.Text = "Date";
             // 
             // lblUser
             // 
@@ -234,21 +238,22 @@
             this.lblUser.BackColor = System.Drawing.Color.DarkCyan;
             this.lblUser.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lblUser.Location = new System.Drawing.Point(536, 14);
+            this.lblUser.Location = new System.Drawing.Point(616, 10);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(83, 17);
+            this.lblUser.Size = new System.Drawing.Size(26, 17);
             this.lblUser.TabIndex = 8;
-            this.lblUser.Text = "User: Admin";
+            this.lblUser.Text = "???";
             // 
             // pnlTimeAndUser
             // 
             this.pnlTimeAndUser.BackColor = System.Drawing.Color.DarkCyan;
+            this.pnlTimeAndUser.Controls.Add(this.label1);
             this.pnlTimeAndUser.Controls.Add(this.lblUser);
             this.pnlTimeAndUser.Controls.Add(this.lblDate);
             this.pnlTimeAndUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlTimeAndUser.Location = new System.Drawing.Point(126, 414);
+            this.pnlTimeAndUser.Location = new System.Drawing.Point(88, 414);
             this.pnlTimeAndUser.Name = "pnlTimeAndUser";
-            this.pnlTimeAndUser.Size = new System.Drawing.Size(674, 36);
+            this.pnlTimeAndUser.Size = new System.Drawing.Size(712, 36);
             this.pnlTimeAndUser.TabIndex = 9;
             // 
             // pictureBox1
@@ -263,13 +268,25 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // paymentsToolStripMenuItem
+            // label1
             // 
-            this.paymentsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.paymentsToolStripMenuItem.Name = "paymentsToolStripMenuItem";
-            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
-            this.paymentsToolStripMenuItem.Text = "Pa&yments";
-            this.paymentsToolStripMenuItem.Click += new System.EventHandler(this.paymentsToolStripMenuItem_Click);
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DarkCyan;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label1.Location = new System.Drawing.Point(569, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "User: ";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmMain
             // 
@@ -308,7 +325,6 @@
         private System.Windows.Forms.ToolStripMenuItem enrollmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem monthlyReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem instructorReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem courseToolStripMenuItem;
@@ -324,6 +340,8 @@
         private System.Windows.Forms.ToolStripMenuItem peopleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paymentsToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TrainingCenter_Business;
 
 namespace Training_Center_Management_System
 {
@@ -47,16 +48,31 @@ namespace Training_Center_Management_System
 
         private void monthlyReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!_IsAdmin())
+            {
+                MessageBox.Show("Only admins can get to reports");
+                return;
+            }
             OpenForm(new frmMonthlyReport());
         }
        
         private void instructorReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!_IsAdmin())
+            {
+                MessageBox.Show("Only admins can get to reports");
+                return;
+            }
             OpenForm( new frmInstructorReport());
         }
       
         private void courseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!_IsAdmin())
+            {
+                MessageBox.Show("Only admins can get to reports");
+                return;
+            }
             OpenForm( new frmCourseStatics());
         }
 
@@ -80,11 +96,10 @@ namespace Training_Center_Management_System
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-
-            lblDate.Text = DateTime.Now.ToString();
-           
-
+            usersToolStripMenuItem.Visible = (clsGlobal.CurrentUser.Role == clsUser.enRole.Admin);
+            reportsToolStripMenuItem.Visible = (clsGlobal.CurrentUser.Role == clsUser.enRole.Admin);
+            lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            lblUser.Text = clsGlobal.CurrentUser.UserName;
         }
 
        
@@ -128,6 +143,11 @@ namespace Training_Center_Management_System
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!_IsAdmin())
+            {
+                MessageBox.Show("Only admins can get to users list");
+                return;
+            }
             frmUsers frm = new frmUsers();
             frm.ShowDialog();
         }
@@ -142,6 +162,16 @@ namespace Training_Center_Management_System
         {
             frmPayments frm = new frmPayments();
             frm.ShowDialog();
+        }
+        
+        private bool _IsAdmin()
+        {
+            return (clsGlobal.CurrentUser.Role == clsUser.enRole.Admin);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
     }
 }
