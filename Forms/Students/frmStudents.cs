@@ -195,5 +195,14 @@ namespace Training_Center_Management_System
             if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
                 dgvStudents.CurrentCell = dgvStudents.Rows[e.RowIndex].Cells["StudentID"];
         }
+
+        private void ShowEnrollmentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SelectedStudentID() != -1)
+            {
+                frmStudentEnrollments frm = new frmStudentEnrollments(SelectedStudentID());
+                frm.ShowDialog();
+            }
+        }
     }
 }

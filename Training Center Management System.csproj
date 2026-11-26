@@ -234,6 +234,12 @@
     <Compile Include="Forms\Payments\frmSelectEnrollment.Designer.cs">
       <DependentUpon>frmSelectEnrollment.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStudentEnrollments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentEnrollments.Designer.cs">
+      <DependentUpon>frmStudentEnrollments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\People\ucPersonInfo.cs">
@@ -370,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Payments\frmSelectEnrollment.resx">
       <DependentUpon>frmSelectEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentEnrollments.resx">
+      <DependentUpon>frmStudentEnrollments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
