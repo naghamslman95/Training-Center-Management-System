@@ -173,7 +173,6 @@ namespace TrainingCenter_Data
                 }
             }
         }
-
         public static DataTable GetInstructorCoursesByInstructorID(int InstructorID)
         {
             DataTable DT = new DataTable();
@@ -197,6 +196,27 @@ namespace TrainingCenter_Data
                     DT.Load(reader);
                     return DT;
                 }
+            }
+        }
+        public static string GetMostPopularCourse()
+        {
+            string query = @"Select Top 1 Courses.Title, Count(Courses.CourseID) as ActiveCount from Courses
+                             INNER JOIN Enrollments
+                                  ON Enrollments.CourseID = Courses.CourseID
+                             WHERE EnrollmentStatus = 1
+                             GROUP By Courses.CourseID, Courses.Title
+                              ORDER BY ActiveCount DESC, Courses.Title ASC";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                connection.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                        return (string)reader["Title"];
+                }
+                return "N/A";
             }
         }
 

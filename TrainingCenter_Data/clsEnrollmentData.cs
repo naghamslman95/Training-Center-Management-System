@@ -304,6 +304,24 @@ namespace TrainingCenter_Data
                 }
             }
         }
+        public static DataTable GetCourseEnrollmentsCountByStatus(int CourseID)
+        {
+            DataTable DT = new DataTable();
+            string query = @"Select Count(*) as Total, EnrollmentStatus from Enrollments 
+                             WHERE Enrollments.CourseID = @CourseID
+                             Group by EnrollmentStatus";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.Add("@CourseID", SqlDbType.Int).Value = CourseID;
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    DT.Load(reader);
+                    return DT;
+                }
+            }
+        }
 
         public static decimal GetBilledPerMonth(DateTime Start, DateTime NextMonthStart)
         {
@@ -323,6 +341,7 @@ namespace TrainingCenter_Data
             }
         }
 
+       
 
     }
 }

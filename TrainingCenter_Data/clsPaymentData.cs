@@ -223,7 +223,6 @@ namespace TrainingCenter_Data
                 return Convert.ToDecimal(result);
             }
         }
-
         public static decimal GetPaidForMonthEnrollments(DateTime Start, DateTime NextMonthStart)
         {
             string query = @"Select ISNULL(SUM(Payments.PaymentAmount), 0) from Payments 
@@ -244,6 +243,23 @@ namespace TrainingCenter_Data
                 return Convert.ToDecimal(result);
             }
         }
+        public static decimal GetTotalPaidByCourseID(int CourseID)
+        {
+            string query = @"Select ISNULL(SUM(Payments.PaymentAmount), 0) from Payments
+                             Inner Join Enrollments 
+                                      On Enrollments.EnrollmentID = Payments.EnrollmentID
+                             WHERE CourseID = @CourseID";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.Add("@CourseID", SqlDbType.Int).Value = CourseID;
+                connection.Open();
 
+                object result = command.ExecuteScalar();
+                if (result == null || result == DBNull.Value)
+                    return 0;
+                return Convert.ToDecimal(result);
+            }
+        }
     }
 }

@@ -244,5 +244,27 @@ namespace TrainingCenter_Business
             decimal Paid = clsPayment.GetPaidForMonthEnrollments(Start, NextMonthStart);
             return Billed - Paid;
         }
+
+        public static int GetCourseEnrollments(int CourseID)
+        {
+            DataTable DT = clsEnrollmentData.GetCourseEnrollmentsCountByStatus(CourseID);
+            int TotalCount = 0;
+            foreach (DataRow row in DT.Rows)
+                TotalCount += Convert.ToInt32(row["Total"]);
+            return TotalCount;
+        }
+
+        public static int GetCourseEnrollmentStatusCount(int CourseID, enEnrollmentStatus Status)
+        {
+            DataTable DT = clsEnrollmentData.GetCourseEnrollmentsCountByStatus(CourseID);
+            int TotalCount = 0;
+            foreach (DataRow row in DT.Rows)
+            {
+                if (Convert.ToInt32(row["EnrollmentStatus"]) == (int)Status)
+                    TotalCount += Convert.ToInt32(row["Total"]);
+            }
+            return TotalCount;
+        }
+
     }
 }

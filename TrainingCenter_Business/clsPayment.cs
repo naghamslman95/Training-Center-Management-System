@@ -152,5 +152,9 @@ namespace TrainingCenter_Business
         {
             return clsPaymentData.GetPaidForMonthEnrollments(Start, NextMonthStart);
         }
+        public static decimal GetTotalPaidByCourseID(int CourseID)
+        {
+            return clsPaymentData.GetTotalPaidByCourseID(CourseID);
+        }
     }
 }

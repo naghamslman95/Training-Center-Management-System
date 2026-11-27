@@ -138,5 +138,9 @@ namespace TrainingCenter_Business
         {
             return clsCourseData.GetInstructorCoursesByInstructorID(InstructorID);
         }
+        public static string GetMostPopularCourse()
+        {
+            return clsCourseData.GetMostPopularCourse();
+        }
     }
 }
